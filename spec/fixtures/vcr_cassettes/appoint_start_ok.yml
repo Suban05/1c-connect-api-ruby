@@ -1,0 +1,35 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://push.1c-connect.com/v1/line/appoint/start
+    body:
+      encoding: UTF-8
+      string: '{"line_id":"cd484afc-29b7-11ed-8dca-00505601495b","user_id":"dd9f0a89-08db-49bf-83dc-dfe3269bf6fe"}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.7.11
+      Authorization:
+      - Basic <AUTH>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 24 Feb 2024 14:10:19 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Sat, 24 Feb 2024 14:10:18 GMT
+recorded_with: VCR 6.2.0

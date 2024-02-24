@@ -1,0 +1,36 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://push.1c-connect.com/v1/conference/send/message
+    body:
+      encoding: UTF-8
+      string: '{"conference_id":"01397a78-66f1-4987-9db7-f62515534666","author_id":"3bff3f2f-6c13-4d6a-9b2f-c69543a05ea2","text":"test
+        message"}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.7.11
+      Authorization:
+      - Basic <AUTH>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 24 Feb 2024 17:28:30 GMT
+      Content-Length:
+      - '0'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: ''
+  recorded_at: Sat, 24 Feb 2024 17:28:29 GMT
+recorded_with: VCR 6.2.0

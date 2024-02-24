@@ -1,0 +1,38 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://push.1c-connect.com/v1/line
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.7.11
+      Authorization:
+      - Basic <AUTH>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 24 Feb 2024 12:18:01 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1346'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        W3sibGluZV9pZCI6ImFiOGNjMWM0LTZlM2QtMTFlZS04NjQ0LTAwNTA1NjAxNDk1YiIsIm5hbWUiOiLQo9C/0YDQsNCy0LvQtdC90LjQtSDRhNC40YDQvNC+0Lkg0YTRgNCw0L3Rh9Cw0LnQt9C4IDHQoSIsImFsbG93X2JvdCI6ZmFsc2V9LHsibGluZV9pZCI6ImI1NWNkNTEwLTM1ZGMtMTFlNC05M2Y4LWU4MzkzNTJiYmE2OSIsIm5hbWUiOiLQodC10YDQstC40YEt0LjQvdC20LXQvdC10YAgMdChOtCY0KLQoSIsImFsbG93X2JvdCI6ZmFsc2V9LHsibGluZV9pZCI6ImY2ZjA5OWQyLTk2ZTItMTFlOC04MGViLTAwMjU5MDRmOTcwZCIsIm5hbWUiOiLQl9Cw0YDQv9C70LDRgtCwIiwiYWxsb3dfYm90IjpmYWxzZX0seyJsaW5lX2lkIjoiNGNiZGZkYmMtOTZlMy0xMWU4LTgwZWItMDAyNTkwNGY5NzBkIiwibmFtZSI6ItCR0YPRhdCz0LDQu9GC0LXRgNC40Y8g0JPQoyIsImFsbG93X2JvdCI6ZmFsc2V9LHsibGluZV9pZCI6ImNkNDg0YWZjLTI5YjctMTFlZC04ZGNhLTAwNTA1NjAxNDk1YiIsIm5hbWUiOiLQr1/QotC10YHRgiIsImFsbG93X2JvdCI6dHJ1ZSwiaG9va19ib3QiOiJodHRwczovL2M1ODMtMTc2LTIxNS0xOTktMTU2LmV1Lm5ncm9rLmlvLyJ9LHsibGluZV9pZCI6Ijk5OWJlMjJhLTAwNGQtMTFlYy05ZDQ2LTAwNTA1NjAxNDk1YiIsIm5hbWUiOiLQndCw0L/QuNGB0LDRgtGMINC00LjRgNC10LrRgtC+0YDRgyIsImFsbG93X2JvdCI6ZmFsc2V9LHsibGluZV9pZCI6IjQxNjc2YmVhLTc0NDQtMTFlYy05MTlkLTAwNTA1NjAxNDk1YiIsIm5hbWUiOiLQo9Cy0LXQtNC+0LzQu9C10L3QuNGPIiwiYWxsb3dfYm90IjpmYWxzZX0seyJsaW5lX2lkIjoiN2ZmODBkZDctOTZlMy0xMWU4LTgwZWItMDAyNTkwNGY5NzBkIiwibmFtZSI6ItCj0J3QpCwg0KDQvtC30L3QuNGG0LAg0Lgg0KPQoiIsImFsbG93X2JvdCI6ZmFsc2V9LHsibGluZV9pZCI6IjY3N2MyNTc2LTZkMDUtMTFlNy04MGU1LTAwMjU5MDRmOTcwZiIsIm5hbWUiOiLQkdGD0YXQs9Cw0LvRgtC10YDQuNGPIiwiYWxsb3dfYm90IjpmYWxzZX0seyJsaW5lX2lkIjoiZDEyZWM2OTItMWJjZC0xMWU1LTgwZDUtMDAyNTkwNGY5NzBlIiwibmFtZSI6ItCa0LvQuNC10L3Rgi3QvNC10L3QtdC00LbQtdGAIiwiYWxsb3dfYm90Ijp0cnVlfSx7ImxpbmVfaWQiOiI5MjE3NDIwNy04ZjgyLTExZTEtYmQ5ZS1lY2QwZTg3YjU0YzAiLCJuYW1lIjoi0JfQsNGA0L/Qu9Cw0YLQsCDQsdGO0LTQttC10YIiLCJhbGxvd19ib3QiOmZhbHNlfSx7ImxpbmVfaWQiOiIxNzZlZmQ3Zi04OWU2LTExZTEtYmQ5Yy1jZTNkNDc4YTQzMDkiLCJuYW1lIjoi0KLQtdGF0L/QvtC00LTQtdGA0LbQutCwINCt0J4iLCJhbGxvd19ib3QiOmZhbHNlfV0=
+  recorded_at: Sat, 24 Feb 2024 12:18:00 GMT
+recorded_with: VCR 6.2.0

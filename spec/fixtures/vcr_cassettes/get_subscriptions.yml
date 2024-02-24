@@ -1,0 +1,37 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://push.1c-connect.com/v1/line/subscriptions?user_id=47a6720d-c4da-11e5-80e0-0025904f970e
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.7.11
+      Authorization:
+      - Basic <AUTH>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 24 Feb 2024 12:17:37 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '689'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '[{"user_id":"47a6720d-c4da-11e5-80e0-0025904f970e","line_id":"b55cd510-35dc-11e4-93f8-e839352bba69","subscription_set":"2016-01-27T00:00:00Z","subscription_expire_at":null},{"user_id":"47a6720d-c4da-11e5-80e0-0025904f970e","line_id":"4cbdfdbc-96e3-11e8-80eb-0025904f970d","subscription_set":"2019-02-14T00:00:00Z","subscription_expire_at":null},{"user_id":"47a6720d-c4da-11e5-80e0-0025904f970e","line_id":"d12ec692-1bcd-11e5-80d5-0025904f970e","subscription_set":"2022-05-16T00:00:00Z","subscription_expire_at":null},{"user_id":"47a6720d-c4da-11e5-80e0-0025904f970e","line_id":"92174207-8f82-11e1-bd9e-ecd0e87b54c0","subscription_set":"2016-01-27T00:00:00Z","subscription_expire_at":null}]'
+  recorded_at: Sat, 24 Feb 2024 12:17:36 GMT
+recorded_with: VCR 6.2.0

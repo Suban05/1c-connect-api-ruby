@@ -1,0 +1,6 @@
+require 'savon'
+require_relative 'web_service/connect_parameters'
+require_relative 'web_service/connection'
+require_relative 'web_service/request'
+require_relative 'web_service/rest'
+require_relative 'web_service/client'

@@ -1,0 +1,38 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://push.1c-connect.com/v1/line/specialist/3bff3f2f-6c13-4d6a-9b2f-c69543a05ea2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.7.11
+      Authorization:
+      - Basic <AUTH>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 24 Feb 2024 12:33:26 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '245'
+      Connection:
+      - keep-alive
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJ1c2VyX2lkIjoiM2JmZjNmMmYtNmMxMy00ZDZhLTliMmYtYzY5NTQzYTA1ZWEyIiwibmFtZSI6ItCQ0L3QsNGC0L7Qu9C40LkiLCJzdXJuYW1lIjoi0JHRg9GB0YvQs9C40L0iLCJwYXRyb255bWljIjoi0JLQuNC60YLQvtGA0L7QstC40YciLCJhdmF0YXJfdXJsIjoiIiwicG9zdCI6ItCf0YDQvtCz0YDQsNC80LzQuNGB0YIiLCJwaG9uZSI6Iis3LTk2MS01NzktNTAtMDIiLCJlbWFpbCI6ImFuYXRvbHliOTRAZ21haWwuY29tIn0=
+  recorded_at: Sat, 24 Feb 2024 12:33:25 GMT
+recorded_with: VCR 6.2.0

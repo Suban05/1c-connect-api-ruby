@@ -1,0 +1,37 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://push.1c-connect.com/v1/line/competences
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.7.11
+      Authorization:
+      - Basic <AUTH>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 24 Feb 2024 12:54:32 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '[{"specialist_id":"3bff3f2f-6c13-4d6a-9b2f-c69543a05ea2","line_id":"ab8cc1c4-6e3d-11ee-8644-00505601495b","pool_priority":3,"is_franch_spec":false},{"specialist_id":"26c44973-56f4-11e1-bd8d-92568227dc5f","line_id":"ab8cc1c4-6e3d-11ee-8644-00505601495b","pool_priority":3,"is_franch_spec":false},{"specialist_id":"c9afc860-b145-42b4-a62b-3ff075698e5a","line_id":"b55cd510-35dc-11e4-93f8-e839352bba69","pool_priority":1,"is_franch_spec":false},{"specialist_id":"26c44973-56f4-11e1-bd8d-92568227dc5f","line_id":"b55cd510-35dc-11e4-93f8-e839352bba69","pool_priority":3,"is_franch_spec":false},{"specialist_id":"af4d8d46-50ca-4efb-aa53-7b0f8ac802e6","line_id":"b55cd510-35dc-11e4-93f8-e839352bba69","pool_priority":0,"is_franch_spec":false},{"specialist_id":"3bff3f2f-6c13-4d6a-9b2f-c69543a05ea2","line_id":"b55cd510-35dc-11e4-93f8-e839352bba69","pool_priority":0,"is_franch_spec":false},{"specialist_id":"5808e279-4a5a-49f4-bee0-d488d40a03ae","line_id":"b55cd510-35dc-11e4-93f8-e839352bba69","pool_priority":0,"is_franch_spec":false},{"specialist_id":"26c44973-56f4-11e1-bd8d-92568227dc5f","line_id":"f6f099d2-96e2-11e8-80eb-0025904f970d","pool_priority":0,"is_franch_spec":false},{"specialist_id":"e20be0cd-56f4-11e1-bd8d-92568227dc5f","line_id":"f6f099d2-96e2-11e8-80eb-0025904f970d","pool_priority":3,"is_franch_spec":false},{"specialist_id":"8d438921-2621-11e6-80e1-0025904f970d","line_id":"f6f099d2-96e2-11e8-80eb-0025904f970d","pool_priority":1,"is_franch_spec":false},{"specialist_id":"e20be0c9-56f4-11e1-bd8d-92568227dc5f","line_id":"f6f099d2-96e2-11e8-80eb-0025904f970d","pool_priority":0,"is_franch_spec":false},{"specialist_id":"8d438921-2621-11e6-80e1-0025904f970d","line_id":"4cbdfdbc-96e3-11e8-80eb-0025904f970d","pool_priority":0,"is_franch_spec":false},{"specialist_id":"e20be0cb-56f4-11e1-bd8d-92568227dc5f","line_id":"4cbdfdbc-96e3-11e8-80eb-0025904f970d","pool_priority":2,"is_franch_spec":false},{"specialist_id":"e20be0c9-56f4-11e1-bd8d-92568227dc5f","line_id":"4cbdfdbc-96e3-11e8-80eb-0025904f970d","pool_priority":2,"is_franch_spec":false},{"specialist_id":"26c44973-56f4-11e1-bd8d-92568227dc5f","line_id":"4cbdfdbc-96e3-11e8-80eb-0025904f970d","pool_priority":0,"is_franch_spec":false},{"specialist_id":"3bff3f2f-6c13-4d6a-9b2f-c69543a05ea2","line_id":"4cbdfdbc-96e3-11e8-80eb-0025904f970d","pool_priority":0,"is_franch_spec":false},{"specialist_id":"e20be0cd-56f4-11e1-bd8d-92568227dc5f","line_id":"4cbdfdbc-96e3-11e8-80eb-0025904f970d","pool_priority":1,"is_franch_spec":false},{"specialist_id":"26c44973-56f4-11e1-bd8d-92568227dc5f","line_id":"cd484afc-29b7-11ed-8dca-00505601495b","pool_priority":0,"is_franch_spec":false},{"specialist_id":"8d438921-2621-11e6-80e1-0025904f970d","line_id":"cd484afc-29b7-11ed-8dca-00505601495b","pool_priority":3,"is_franch_spec":false},{"specialist_id":"2c98ee32-ecf3-11e6-80e3-0025904f970d","line_id":"cd484afc-29b7-11ed-8dca-00505601495b","pool_priority":3,"is_franch_spec":false},{"specialist_id":"3bff3f2f-6c13-4d6a-9b2f-c69543a05ea2","line_id":"cd484afc-29b7-11ed-8dca-00505601495b","pool_priority":3,"is_franch_spec":false},{"specialist_id":"26c44973-56f4-11e1-bd8d-92568227dc5f","line_id":"999be22a-004d-11ec-9d46-00505601495b","pool_priority":1,"is_franch_spec":false},{"specialist_id":"c9afc860-b145-42b4-a62b-3ff075698e5a","line_id":"7ff80dd7-96e3-11e8-80eb-0025904f970d","pool_priority":3,"is_franch_spec":false},{"specialist_id":"3bff3f2f-6c13-4d6a-9b2f-c69543a05ea2","line_id":"7ff80dd7-96e3-11e8-80eb-0025904f970d","pool_priority":0,"is_franch_spec":false},{"specialist_id":"af4d8d46-50ca-4efb-aa53-7b0f8ac802e6","line_id":"7ff80dd7-96e3-11e8-80eb-0025904f970d","pool_priority":1,"is_franch_spec":false},{"specialist_id":"26c44973-56f4-11e1-bd8d-92568227dc5f","line_id":"7ff80dd7-96e3-11e8-80eb-0025904f970d","pool_priority":0,"is_franch_spec":false},{"specialist_id":"af4d8d46-50ca-4efb-aa53-7b0f8ac802e6","line_id":"677c2576-6d05-11e7-80e5-0025904f970f","pool_priority":0,"is_franch_spec":false},{"specialist_id":"e20be0c9-56f4-11e1-bd8d-92568227dc5f","line_id":"677c2576-6d05-11e7-80e5-0025904f970f","pool_priority":0,"is_franch_spec":false},{"specialist_id":"8d438921-2621-11e6-80e1-0025904f970d","line_id":"677c2576-6d05-11e7-80e5-0025904f970f","pool_priority":1,"is_franch_spec":false},{"specialist_id":"26c44973-56f4-11e1-bd8d-92568227dc5f","line_id":"677c2576-6d05-11e7-80e5-0025904f970f","pool_priority":3,"is_franch_spec":false},{"specialist_id":"3bff3f2f-6c13-4d6a-9b2f-c69543a05ea2","line_id":"d12ec692-1bcd-11e5-80d5-0025904f970e","pool_priority":0,"is_franch_spec":false},{"specialist_id":"c9afc860-b145-42b4-a62b-3ff075698e5a","line_id":"d12ec692-1bcd-11e5-80d5-0025904f970e","pool_priority":0,"is_franch_spec":false},{"specialist_id":"6753e28d-a818-4fba-bcc8-4a0124c62e64","line_id":"d12ec692-1bcd-11e5-80d5-0025904f970e","pool_priority":2,"is_franch_spec":false},{"specialist_id":"26c44973-56f4-11e1-bd8d-92568227dc5f","line_id":"d12ec692-1bcd-11e5-80d5-0025904f970e","pool_priority":3,"is_franch_spec":false},{"specialist_id":"e20be0cd-56f4-11e1-bd8d-92568227dc5f","line_id":"92174207-8f82-11e1-bd9e-ecd0e87b54c0","pool_priority":2,"is_franch_spec":false},{"specialist_id":"e20be0cb-56f4-11e1-bd8d-92568227dc5f","line_id":"92174207-8f82-11e1-bd9e-ecd0e87b54c0","pool_priority":2,"is_franch_spec":false},{"specialist_id":"e20be0c9-56f4-11e1-bd8d-92568227dc5f","line_id":"92174207-8f82-11e1-bd9e-ecd0e87b54c0","pool_priority":2,"is_franch_spec":false},{"specialist_id":"8d438921-2621-11e6-80e1-0025904f970d","line_id":"92174207-8f82-11e1-bd9e-ecd0e87b54c0","pool_priority":1,"is_franch_spec":false},{"specialist_id":"26c44973-56f4-11e1-bd8d-92568227dc5f","line_id":"92174207-8f82-11e1-bd9e-ecd0e87b54c0","pool_priority":0,"is_franch_spec":false},{"specialist_id":"e20be0c7-56f4-11e1-bd8d-92568227dc5f","line_id":"176efd7f-89e6-11e1-bd9c-ce3d478a4309","pool_priority":1,"is_franch_spec":false}]'
+  recorded_at: Sat, 24 Feb 2024 12:54:32 GMT
+recorded_with: VCR 6.2.0

@@ -1,0 +1,7 @@
+require 'faraday'
+require_relative 'http_service/connection'
+require_relative 'http_service/request'
+require_relative 'http_service/information_api'
+require_relative 'http_service/bot_api'
+require_relative 'http_service/rest'
+require_relative 'http_service/client'

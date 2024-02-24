@@ -1,0 +1,39 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://push.1c-connect.com/v1/ticket/2dc3f2f-1c12-7b6c-0q4x-s69524a05ec3
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.7.11
+      Authorization:
+      - Basic <AUTH>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 301
+      message: Moved Permanently
+    headers:
+      Date:
+      - Sat, 24 Feb 2024 13:52:53 GMT
+      Content-Type:
+      - text/html; charset=utf-8
+      Content-Length:
+      - '82'
+      Connection:
+      - keep-alive
+      Location:
+      - "/v1/ticket/2dc3f2f-1c12-7b6c-0q4x-s69524a05ec3/"
+    body:
+      encoding: UTF-8
+      string: "<a href=\"/v1/ticket/2dc3f2f-1c12-7b6c-0q4x-s69524a05ec3/\">Moved Permanently</a>.\n\n"
+  recorded_at: Sat, 24 Feb 2024 13:52:52 GMT
+recorded_with: VCR 6.2.0
