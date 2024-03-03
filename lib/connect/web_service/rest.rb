@@ -63,6 +63,17 @@ module Connect
         call(self, method: :client_user_read, params: params)
       end
 
+      def get_opened_service_treatments(options = {})
+        params = []
+        add_param(params, create_date(name: 'OpenedFrom', content: options[:opened_from], required: true))
+        add_param(params, create_date_time(name: 'OpenedTo', content: options[:opened_to]))
+        add_param(params, create_string(name: 'ClientID', content: options[:client_id]))
+        add_param(params, create_string(name: 'ServiceUserID', content: options[:service_user_id]))
+        add_param(params, create_string(name: 'ServiceID', content: options[:service_id]))
+        add_param(params, create_string(name: 'SpecialistID', content: options[:specialist_id]))
+        call(self, method: :get_opened_service_treatments, params: params)
+      end
+
       def add_param(params, param)
         params << param if param.required || param.value.content
       end

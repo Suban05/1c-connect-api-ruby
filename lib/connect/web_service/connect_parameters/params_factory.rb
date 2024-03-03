@@ -11,22 +11,21 @@ module Connect
         end
 
         def create_changed_from(options)
-          date = options[:changed_from]
-          content = nil
-          if date
-            content = date.strftime('%Y-%m-%dT%H:%M:%S')
-          end
           create_date_time(
             name: 'ChangedFrom',
-            content: content
+            content: options[:content]
           )
         end
 
         def create_date_time(options)
+          content = nil
+          if options[:content]
+            content = options[:content].strftime('%Y-%m-%dT%H:%M:%S')
+          end
           create_parameter(
             name: options[:name],
             type: 'xs:dateTime',
-            content: options[:content]
+            content: content
           )
         end
 

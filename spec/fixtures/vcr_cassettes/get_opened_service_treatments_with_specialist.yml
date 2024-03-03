@@ -1,0 +1,1502 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://cus.1c-connect.com/cus/ws/PartnerWebAPI2?wsdl
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Basic <AUTH>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.14.2
+      Date:
+      - Sun, 03 Mar 2024 07:29:53 GMT
+      Content-Type:
+      - text/xml; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<definitions xmlns=\"http://schemas.xmlsoap.org/wsdl/\"\n\t\txmlns:soap12bind=\"http://schemas.xmlsoap.org/wsdl/soap12/\"\n\t\txmlns:xmime=\"http://www.w3.org/2005/05/xmlmime\"\n\t\txmlns:soapbind=\"http://schemas.xmlsoap.org/wsdl/soap/\"\n\t\txmlns:tns=\"http://buhphone.com/PartnerWebAPI2\"\n\t\txmlns:wsp=\"http://schemas.xmlsoap.org/ws/2004/09/policy\"\n\t\txmlns:wsu=\"http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd\"\n\t\txmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"\n\t\txmlns:xsd1=\"http://buhphone.com/PartnerWebAPI2\"\n\t\txmlns:xsd2=\"http://v8.1c.ru/8.1/data/core\"\n\t\tname=\"PartnerWebAPI2\"\n\t\ttargetNamespace=\"http://buhphone.com/PartnerWebAPI2\">\n\t<types>\n\t\t<xs:schema
+        xmlns:tns=\"http://v8.1c.ru/8.1/data/core\"\n\t\t\t\txmlns:xs=\"http://www.w3.org/2001/XMLSchema\"\n\t\t\t\ttargetNamespace=\"http://v8.1c.ru/8.1/data/core\"\n\t\t\t\tattributeFormDefault=\"unqualified\"\n\t\t\t\telementFormDefault=\"qualified\">\n\t\t\t<xs:simpleType
+        name=\"AllowedLength\">\n\t\t\t\t<xs:restriction base=\"xs:string\">\n\t\t\t\t\t<xs:enumeration
+        value=\"Fixed\"/>\n\t\t\t\t\t<xs:enumeration value=\"Variable\"/>\n\t\t\t\t</xs:restriction>\n\t\t\t</xs:simpleType>\n\t\t\t<xs:simpleType
+        name=\"AllowedSign\">\n\t\t\t\t<xs:restriction base=\"xs:string\">\n\t\t\t\t\t<xs:enumeration
+        value=\"Any\"/>\n\t\t\t\t\t<xs:enumeration value=\"Nonnegative\"/>\n\t\t\t\t</xs:restriction>\n\t\t\t</xs:simpleType>\n\t\t\t<xs:complexType
+        name=\"Array\">\n\t\t\t\t<xs:sequence>\n\t\t\t\t\t<xs:element name=\"Value\"\n\t\t\t\t\t\t\tnillable=\"true\"\n\t\t\t\t\t\t\tminOccurs=\"0\"\n\t\t\t\t\t\t\tmaxOccurs=\"unbounded\"/>\n\t\t\t\t</xs:sequence>\n\t\t\t</xs:complexType>\n\t\t\t<xs:complexType
+        name=\"BinaryDataQualifiers\">\n\t\t\t\t<xs:sequence>\n\t\t\t\t\t<xs:element
+        name=\"Length\"\n\t\t\t\t\t\t\ttype=\"xs:decimal\"/>\n\t\t\t\t\t<xs:element
+        name=\"AllowedLength\"\n\t\t\t\t\t\t\ttype=\"tns:AllowedLength\"/>\n\t\t\t\t</xs:sequence>\n\t\t\t</xs:complexType>\n\t\t\t<xs:simpleType
+        name=\"CompositeID\">\n\t\t\t\t<xs:restriction base=\"xs:string\">\n\t\t\t\t\t<xs:pattern
+        value=\"-?[0-9]+(:[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})?\"/>\n\t\t\t\t</xs:restriction>\n\t\t\t</xs:simpleType>\n\t\t\t<xs:complexType
+        name=\"DataFillError\">\n\t\t\t\t<xs:sequence>\n\t\t\t\t\t<xs:element name=\"Data\"\n\t\t\t\t\t\t\ttype=\"xs:string\"/>\n\t\t\t\t\t<xs:element
+        name=\"DataDescr\"\n\t\t\t\t\t\t\ttype=\"xs:string\"/>\n\t\t\t\t\t<xs:element
+        name=\"Text\"\n\t\t\t\t\t\t\ttype=\"xs:string\"/>\n\t\t\t\t\t<xs:element name=\"Status\"\n\t\t\t\t\t\t\ttype=\"tns:FillCheckErrorStatus\"/>\n\t\t\t\t</xs:sequence>\n\t\t\t</xs:complexType>\n\t\t\t<xs:complexType
+        name=\"DataFillErrors\">\n\t\t\t\t<xs:sequence>\n\t\t\t\t\t<xs:element name=\"item\"\n\t\t\t\t\t\t\ttype=\"tns:DataFillError\"\n\t\t\t\t\t\t\tminOccurs=\"0\"\n\t\t\t\t\t\t\tmaxOccurs=\"unbounded\"/>\n\t\t\t\t</xs:sequence>\n\t\t\t</xs:complexType>\n\t\t\t<xs:simpleType
+        name=\"DateFractions\">\n\t\t\t\t<xs:restriction base=\"xs:string\">\n\t\t\t\t\t<xs:enumeration
+        value=\"Date\"/>\n\t\t\t\t\t<xs:enumeration value=\"Time\"/>\n\t\t\t\t\t<xs:enumeration
+        value=\"DateTime\"/>\n\t\t\t\t</xs:restriction>\n\t\t\t</xs:simpleType>\n\t\t\t<xs:complexType
+        name=\"DateQualifiers\">\n\t\t\t\t<xs:sequence>\n\t\t\t\t\t<xs:element name=\"DateFractions\"\n\t\t\t\t\t\t\ttype=\"tns:DateFractions\"/>\n\t\t\t\t</xs:sequence>\n\t\t\t</xs:complexType>\n\t\t\t<xs:simpleType
+        name=\"ErrorCategory\">\n\t\t\t\t<xs:restriction base=\"xs:string\">\n\t\t\t\t\t<xs:enumeration
+        value=\"AccessViolation\"/>\n\t\t\t\t\t<xs:enumeration value=\"LocalFileAccessError\"/>\n\t\t\t\t\t<xs:enumeration
+        value=\"NetworkError\"/>\n\t\t\t\t\t<xs:enumeration value=\"PrinterError\"/>\n\t\t\t\t\t<xs:enumeration
+        value=\"ScriptCompileError\"/>\n\t\t\t\t\t<xs:enumeration value=\"ScriptRuntimeError\"/>\n\t\t\t\t\t<xs:enumeration
+        value=\"ScriptUseError\"/>\n\t\t\t\t\t<xs:enumeration value=\"ExceptionRaisedFromScript\"/>\n\t\t\t\t\t<xs:enumeration
+        value=\"CollaborationSystemError\"/>\n\t\t\t\t\t<xs:enumeration value=\"DataCompositionSettingsError\"/>\n\t\t\t\t\t<xs:enumeration
+        value=\"SessionError\"/>\n\t\t\t\t\t<xs:enumeration value=\"StoredDataError\"/>\n\t\t\t\t\t<xs:enumeration
+        value=\"FullTextSearchError\"/>\n\t\t\t\t\t<xs:enumeration value=\"ExternalDataSourceError\"/>\n\t\t\t\t\t<xs:enumeration
+        value=\"GotoURLError\"/>\n\t\t\t\t\t<xs:enumeration value=\"DatabaseCopyError\"/>\n\t\t\t\t\t<xs:enumeration
+        value=\"OtherError\"/>\n\t\t\t\t\t<xs:enumeration value=\"AllErrors\"/>\n\t\t\t\t</xs:restriction>\n\t\t\t</xs:simpleType>\n\t\t\t<xs:complexType
+        name=\"Exception\">\n\t\t\t\t<xs:complexContent>\n\t\t\t\t\t<xs:extension
+        base=\"tns:GenericException\">\n\t\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t\t<xs:element
+        name=\"data\"\n\t\t\t\t\t\t\t\t\ttype=\"xs:base64Binary\"\n\t\t\t\t\t\t\t\t\tminOccurs=\"0\"/>\n\t\t\t\t\t\t</xs:sequence>\n\t\t\t\t\t</xs:extension>\n\t\t\t\t</xs:complexContent>\n\t\t\t</xs:complexType>\n\t\t\t<xs:simpleType
+        name=\"FileDragMode\">\n\t\t\t\t<xs:restriction base=\"xs:string\">\n\t\t\t\t\t<xs:enumeration
+        value=\"AsFile\"/>\n\t\t\t\t\t<xs:enumeration value=\"AsFileRef\"/>\n\t\t\t\t</xs:restriction>\n\t\t\t</xs:simpleType>\n\t\t\t<xs:simpleType
+        name=\"FillCheckErrorStatus\">\n\t\t\t\t<xs:restriction base=\"xs:string\">\n\t\t\t\t\t<xs:enumeration
+        value=\"Error\"/>\n\t\t\t\t\t<xs:enumeration value=\"Warning\"/>\n\t\t\t\t</xs:restriction>\n\t\t\t</xs:simpleType>\n\t\t\t<xs:simpleType
+        name=\"FillChecking\">\n\t\t\t\t<xs:restriction base=\"xs:string\">\n\t\t\t\t\t<xs:enumeration
+        value=\"DontCheck\"/>\n\t\t\t\t\t<xs:enumeration value=\"ShowError\"/>\n\t\t\t\t</xs:restriction>\n\t\t\t</xs:simpleType>\n\t\t\t<xs:complexType
+        name=\"FixedArray\">\n\t\t\t\t<xs:sequence>\n\t\t\t\t\t<xs:element name=\"Value\"\n\t\t\t\t\t\t\tnillable=\"true\"\n\t\t\t\t\t\t\tminOccurs=\"0\"\n\t\t\t\t\t\t\tmaxOccurs=\"unbounded\"/>\n\t\t\t\t</xs:sequence>\n\t\t\t</xs:complexType>\n\t\t\t<xs:complexType
+        name=\"FixedMap\">\n\t\t\t\t<xs:sequence>\n\t\t\t\t\t<xs:element name=\"pair\"\n\t\t\t\t\t\t\ttype=\"tns:KeyAndValue\"\n\t\t\t\t\t\t\tminOccurs=\"0\"\n\t\t\t\t\t\t\tmaxOccurs=\"unbounded\"/>\n\t\t\t\t</xs:sequence>\n\t\t\t</xs:complexType>\n\t\t\t<xs:complexType
+        name=\"FixedStructure\">\n\t\t\t\t<xs:sequence>\n\t\t\t\t\t<xs:element name=\"Property\"\n\t\t\t\t\t\t\tminOccurs=\"0\"\n\t\t\t\t\t\t\tmaxOccurs=\"unbounded\">\n\t\t\t\t\t\t<xs:complexType>\n\t\t\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t\t\t<xs:element
+        name=\"Value\"\n\t\t\t\t\t\t\t\t\t\tnillable=\"true\"/>\n\t\t\t\t\t\t\t</xs:sequence>\n\t\t\t\t\t\t\t<xs:attribute
+        name=\"name\"\n\t\t\t\t\t\t\t\t\ttype=\"xs:NMTOKEN\"\n\t\t\t\t\t\t\t\t\tuse=\"required\"/>\n\t\t\t\t\t\t</xs:complexType>\n\t\t\t\t\t</xs:element>\n\t\t\t\t</xs:sequence>\n\t\t\t</xs:complexType>\n\t\t\t<xs:complexType
+        name=\"GenericException\"\n\t\t\t\t\tabstract=\"true\">\n\t\t\t\t<xs:sequence>\n\t\t\t\t\t<xs:element
+        name=\"descr\"\n\t\t\t\t\t\t\ttype=\"xs:string\"/>\n\t\t\t\t\t<xs:element
+        name=\"inner\"\n\t\t\t\t\t\t\ttype=\"tns:GenericException\"\n\t\t\t\t\t\t\tminOccurs=\"0\"/>\n\t\t\t\t\t<xs:element
+        name=\"category\"\n\t\t\t\t\t\t\ttype=\"xs:string\"\n\t\t\t\t\t\t\tminOccurs=\"0\"/>\n\t\t\t\t\t<xs:element
+        name=\"uiHelperUUID\"\n\t\t\t\t\t\t\ttype=\"tns:UUID\"\n\t\t\t\t\t\t\tminOccurs=\"0\"/>\n\t\t\t\t\t<xs:element
+        name=\"creationStack\"\n\t\t\t\t\t\t\ttype=\"xs:string\"\n\t\t\t\t\t\t\tminOccurs=\"0\"/>\n\t\t\t\t</xs:sequence>\n\t\t\t\t<xs:attribute
+        name=\"clsid\"\n\t\t\t\t\t\ttype=\"tns:UUID\"\n\t\t\t\t\t\tuse=\"required\"/>\n\t\t\t\t<xs:attribute
+        name=\"encoded\"\n\t\t\t\t\t\ttype=\"xs:boolean\"\n\t\t\t\t\t\tdefault=\"false\"/>\n\t\t\t</xs:complexType>\n\t\t\t<xs:complexType
+        name=\"KeyAndValue\">\n\t\t\t\t<xs:sequence>\n\t\t\t\t\t<xs:element name=\"Key\"/>\n\t\t\t\t\t<xs:element
+        name=\"Value\"\n\t\t\t\t\t\t\tnillable=\"true\"/>\n\t\t\t\t</xs:sequence>\n\t\t\t</xs:complexType>\n\t\t\t<xs:complexType
+        name=\"LocalStringItemType\">\n\t\t\t\t<xs:sequence>\n\t\t\t\t\t<xs:element
+        name=\"lang\"\n\t\t\t\t\t\t\ttype=\"xs:NMTOKEN\"/>\n\t\t\t\t\t<xs:element
+        name=\"content\"\n\t\t\t\t\t\t\ttype=\"xs:string\"/>\n\t\t\t\t</xs:sequence>\n\t\t\t</xs:complexType>\n\t\t\t<xs:complexType
+        name=\"LocalStringType\">\n\t\t\t\t<xs:sequence>\n\t\t\t\t\t<xs:element name=\"item\"\n\t\t\t\t\t\t\ttype=\"tns:LocalStringItemType\"\n\t\t\t\t\t\t\tminOccurs=\"0\"\n\t\t\t\t\t\t\tmaxOccurs=\"unbounded\"/>\n\t\t\t\t</xs:sequence>\n\t\t\t</xs:complexType>\n\t\t\t<xs:simpleType
+        name=\"MainClientApplicationWindowMode\">\n\t\t\t\t<xs:restriction base=\"xs:string\">\n\t\t\t\t\t<xs:enumeration
+        value=\"Normal\"/>\n\t\t\t\t\t<xs:enumeration value=\"Workplace\"/>\n\t\t\t\t\t<xs:enumeration
+        value=\"FullscreenWorkplace\"/>\n\t\t\t\t\t<xs:enumeration value=\"Kiosk\"/>\n\t\t\t\t\t<xs:enumeration
+        value=\"EmbeddedWorkplace\"/>\n\t\t\t\t</xs:restriction>\n\t\t\t</xs:simpleType>\n\t\t\t<xs:complexType
+        name=\"Map\">\n\t\t\t\t<xs:sequence>\n\t\t\t\t\t<xs:element name=\"pair\"\n\t\t\t\t\t\t\ttype=\"tns:KeyAndValue\"\n\t\t\t\t\t\t\tminOccurs=\"0\"\n\t\t\t\t\t\t\tmaxOccurs=\"unbounded\"/>\n\t\t\t\t</xs:sequence>\n\t\t\t</xs:complexType>\n\t\t\t<xs:simpleType
+        name=\"Null\">\n\t\t\t\t<xs:restriction base=\"xs:string\">\n\t\t\t\t\t<xs:length
+        value=\"0\"/>\n\t\t\t\t</xs:restriction>\n\t\t\t</xs:simpleType>\n\t\t\t<xs:complexType
+        name=\"NumberQualifiers\">\n\t\t\t\t<xs:sequence>\n\t\t\t\t\t<xs:element name=\"Digits\"\n\t\t\t\t\t\t\ttype=\"xs:decimal\"/>\n\t\t\t\t\t<xs:element
+        name=\"FractionDigits\"\n\t\t\t\t\t\t\ttype=\"xs:decimal\"/>\n\t\t\t\t\t<xs:element
+        name=\"AllowedSign\"\n\t\t\t\t\t\t\ttype=\"tns:AllowedSign\"/>\n\t\t\t\t</xs:sequence>\n\t\t\t</xs:complexType>\n\t\t\t<xs:simpleType
+        name=\"ObjectVersion\">\n\t\t\t\t<xs:restriction base=\"xs:string\">\n\t\t\t\t\t<xs:pattern
+        value=\"[0-9a-fA-F]{40}\"/>\n\t\t\t\t</xs:restriction>\n\t\t\t</xs:simpleType>\n\t\t\t<xs:complexType
+        name=\"StandardBeginningDate\">\n\t\t\t\t<xs:sequence>\n\t\t\t\t\t<xs:element
+        name=\"variant\"/>\n\t\t\t\t\t<xs:element name=\"date\"\n\t\t\t\t\t\t\ttype=\"xs:dateTime\"\n\t\t\t\t\t\t\tminOccurs=\"0\"/>\n\t\t\t\t</xs:sequence>\n\t\t\t</xs:complexType>\n\t\t\t<xs:simpleType
+        name=\"StandardBeginningDateVariant\">\n\t\t\t\t<xs:restriction base=\"xs:string\">\n\t\t\t\t\t<xs:enumeration
+        value=\"Custom\"/>\n\t\t\t\t\t<xs:enumeration value=\"BeginningOfThisDay\"/>\n\t\t\t\t\t<xs:enumeration
+        value=\"BeginningOfThisWeek\"/>\n\t\t\t\t\t<xs:enumeration value=\"BeginningOfThisTenDays\"/>\n\t\t\t\t\t<xs:enumeration
+        value=\"BeginningOfThisMonth\"/>\n\t\t\t\t\t<xs:enumeration value=\"BeginningOfThisQuarter\"/>\n\t\t\t\t\t<xs:enumeration
+        value=\"BeginningOfThisHalfYear\"/>\n\t\t\t\t\t<xs:enumeration value=\"BeginningOfThisYear\"/>\n\t\t\t\t\t<xs:enumeration
+        value=\"BeginningOfLastDay\"/>\n\t\t\t\t\t<xs:enumeration value=\"BeginningOfLastWeek\"/>\n\t\t\t\t\t<xs:enumeration
+        value=\"BeginningOfLastTenDays\"/>\n\t\t\t\t\t<xs:enumeration value=\"BeginningOfLastMonth\"/>\n\t\t\t\t\t<xs:enumeration
+        value=\"BeginningOfLastQuarter\"/>\n\t\t\t\t\t<xs:enumeration value=\"BeginningOfLastHalfYear\"/>\n\t\t\t\t\t<xs:enumeration
+        value=\"BeginningOfLastYear\"/>\n\t\t\t\t\t<xs:enumeration value=\"BeginningOfNextDay\"/>\n\t\t\t\t\t<xs:enumeration
+        value=\"BeginningOfNextWeek\"/>\n\t\t\t\t\t<xs:enumeration value=\"BeginningOfNextTenDays\"/>\n\t\t\t\t\t<xs:enumeration
+        value=\"BeginningOfNextMonth\"/>\n\t\t\t\t\t<xs:enumeration value=\"BeginningOfNextQuarter\"/>\n\t\t\t\t\t<xs:enumeration
+        value=\"BeginningOfNextHalfYear\"/>\n\t\t\t\t\t<xs:enumeration value=\"BeginningOfNextYear\"/>\n\t\t\t\t</xs:restriction>\n\t\t\t</xs:simpleType>\n\t\t\t<xs:complexType
+        name=\"StandardPeriod\">\n\t\t\t\t<xs:sequence>\n\t\t\t\t\t<xs:element name=\"variant\"/>\n\t\t\t\t\t<xs:element
+        name=\"startDate\"\n\t\t\t\t\t\t\ttype=\"xs:dateTime\"\n\t\t\t\t\t\t\tminOccurs=\"0\"/>\n\t\t\t\t\t<xs:element
+        name=\"endDate\"\n\t\t\t\t\t\t\ttype=\"xs:dateTime\"\n\t\t\t\t\t\t\tminOccurs=\"0\"/>\n\t\t\t\t</xs:sequence>\n\t\t\t</xs:complexType>\n\t\t\t<xs:simpleType
+        name=\"StandardPeriodVariant\">\n\t\t\t\t<xs:restriction base=\"xs:string\">\n\t\t\t\t\t<xs:enumeration
+        value=\"Custom\"/>\n\t\t\t\t\t<xs:enumeration value=\"Today\"/>\n\t\t\t\t\t<xs:enumeration
+        value=\"ThisWeek\"/>\n\t\t\t\t\t<xs:enumeration value=\"ThisTenDays\"/>\n\t\t\t\t\t<xs:enumeration
+        value=\"ThisMonth\"/>\n\t\t\t\t\t<xs:enumeration value=\"ThisQuarter\"/>\n\t\t\t\t\t<xs:enumeration
+        value=\"ThisHalfYear\"/>\n\t\t\t\t\t<xs:enumeration value=\"ThisYear\"/>\n\t\t\t\t\t<xs:enumeration
+        value=\"FromBeginningOfThisWeek\"/>\n\t\t\t\t\t<xs:enumeration value=\"FromBeginningOfThisTenDays\"/>\n\t\t\t\t\t<xs:enumeration
+        value=\"FromBeginningOfThisMonth\"/>\n\t\t\t\t\t<xs:enumeration value=\"FromBeginningOfThisQuarter\"/>\n\t\t\t\t\t<xs:enumeration
+        value=\"FromBeginningOfThisHalfYear\"/>\n\t\t\t\t\t<xs:enumeration value=\"FromBeginningOfThisYear\"/>\n\t\t\t\t\t<xs:enumeration
+        value=\"Yesterday\"/>\n\t\t\t\t\t<xs:enumeration value=\"LastWeek\"/>\n\t\t\t\t\t<xs:enumeration
+        value=\"LastTenDays\"/>\n\t\t\t\t\t<xs:enumeration value=\"LastMonth\"/>\n\t\t\t\t\t<xs:enumeration
+        value=\"LastQuarter\"/>\n\t\t\t\t\t<xs:enumeration value=\"LastHalfYear\"/>\n\t\t\t\t\t<xs:enumeration
+        value=\"LastYear\"/>\n\t\t\t\t\t<xs:enumeration value=\"LastWeekTillSameWeekDay\"/>\n\t\t\t\t\t<xs:enumeration
+        value=\"LastTenDaysTillSameDayNumber\"/>\n\t\t\t\t\t<xs:enumeration value=\"LastMonthTillSameDate\"/>\n\t\t\t\t\t<xs:enumeration
+        value=\"LastQuarterTillSameDate\"/>\n\t\t\t\t\t<xs:enumeration value=\"LastHalfYearTillSameDate\"/>\n\t\t\t\t\t<xs:enumeration
+        value=\"LastYearTillSameDate\"/>\n\t\t\t\t\t<xs:enumeration value=\"Tomorrow\"/>\n\t\t\t\t\t<xs:enumeration
+        value=\"NextWeek\"/>\n\t\t\t\t\t<xs:enumeration value=\"NextTenDays\"/>\n\t\t\t\t\t<xs:enumeration
+        value=\"NextMonth\"/>\n\t\t\t\t\t<xs:enumeration value=\"NextQuarter\"/>\n\t\t\t\t\t<xs:enumeration
+        value=\"NextHalfYear\"/>\n\t\t\t\t\t<xs:enumeration value=\"NextYear\"/>\n\t\t\t\t\t<xs:enumeration
+        value=\"NextWeekTillSameWeekDay\"/>\n\t\t\t\t\t<xs:enumeration value=\"NextTenDaysTillSameDayNumber\"/>\n\t\t\t\t\t<xs:enumeration
+        value=\"NextMonthTillSameDate\"/>\n\t\t\t\t\t<xs:enumeration value=\"NextQuarterTillSameDate\"/>\n\t\t\t\t\t<xs:enumeration
+        value=\"NextHalfYearTillSameDate\"/>\n\t\t\t\t\t<xs:enumeration value=\"NextYearTillSameDate\"/>\n\t\t\t\t\t<xs:enumeration
+        value=\"TillEndOfThisWeek\"/>\n\t\t\t\t\t<xs:enumeration value=\"TillEndOfThisTenDays\"/>\n\t\t\t\t\t<xs:enumeration
+        value=\"TillEndOfThisMonth\"/>\n\t\t\t\t\t<xs:enumeration value=\"TillEndOfThisQuarter\"/>\n\t\t\t\t\t<xs:enumeration
+        value=\"TillEndOfThisHalfYear\"/>\n\t\t\t\t\t<xs:enumeration value=\"TillEndOfThisYear\"/>\n\t\t\t\t\t<xs:enumeration
+        value=\"Last7Days\"/>\n\t\t\t\t\t<xs:enumeration value=\"Next7Days\"/>\n\t\t\t\t\t<xs:enumeration
+        value=\"Month\"/>\n\t\t\t\t</xs:restriction>\n\t\t\t</xs:simpleType>\n\t\t\t<xs:complexType
+        name=\"StringQualifiers\">\n\t\t\t\t<xs:sequence>\n\t\t\t\t\t<xs:element name=\"Length\"\n\t\t\t\t\t\t\ttype=\"xs:decimal\"/>\n\t\t\t\t\t<xs:element
+        name=\"AllowedLength\"\n\t\t\t\t\t\t\ttype=\"tns:AllowedLength\"/>\n\t\t\t\t</xs:sequence>\n\t\t\t</xs:complexType>\n\t\t\t<xs:complexType
+        name=\"Structure\">\n\t\t\t\t<xs:sequence>\n\t\t\t\t\t<xs:element name=\"Property\"\n\t\t\t\t\t\t\tminOccurs=\"0\"\n\t\t\t\t\t\t\tmaxOccurs=\"unbounded\">\n\t\t\t\t\t\t<xs:complexType>\n\t\t\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t\t\t<xs:element
+        name=\"Value\"\n\t\t\t\t\t\t\t\t\t\tnillable=\"true\"/>\n\t\t\t\t\t\t\t</xs:sequence>\n\t\t\t\t\t\t\t<xs:attribute
+        name=\"name\"\n\t\t\t\t\t\t\t\t\ttype=\"xs:NMTOKEN\"\n\t\t\t\t\t\t\t\t\tuse=\"required\"/>\n\t\t\t\t\t\t</xs:complexType>\n\t\t\t\t\t</xs:element>\n\t\t\t\t</xs:sequence>\n\t\t\t</xs:complexType>\n\t\t\t<xs:simpleType
+        name=\"Type\">\n\t\t\t\t<xs:restriction base=\"xs:QName\"/>\n\t\t\t</xs:simpleType>\n\t\t\t<xs:complexType
+        name=\"TypeDescription\">\n\t\t\t\t<xs:sequence>\n\t\t\t\t\t<xs:element name=\"Type\"\n\t\t\t\t\t\t\ttype=\"xs:QName\"\n\t\t\t\t\t\t\tminOccurs=\"0\"\n\t\t\t\t\t\t\tmaxOccurs=\"unbounded\"/>\n\t\t\t\t\t<xs:element
+        name=\"TypeSet\"\n\t\t\t\t\t\t\ttype=\"xs:QName\"\n\t\t\t\t\t\t\tminOccurs=\"0\"\n\t\t\t\t\t\t\tmaxOccurs=\"unbounded\"/>\n\t\t\t\t\t<xs:element
+        name=\"TypeId\"\n\t\t\t\t\t\t\ttype=\"tns:UUID\"\n\t\t\t\t\t\t\tminOccurs=\"0\"\n\t\t\t\t\t\t\tmaxOccurs=\"unbounded\"/>\n\t\t\t\t\t<xs:element
+        name=\"NumberQualifiers\"\n\t\t\t\t\t\t\ttype=\"tns:NumberQualifiers\"\n\t\t\t\t\t\t\tminOccurs=\"0\"/>\n\t\t\t\t\t<xs:element
+        name=\"StringQualifiers\"\n\t\t\t\t\t\t\ttype=\"tns:StringQualifiers\"\n\t\t\t\t\t\t\tminOccurs=\"0\"/>\n\t\t\t\t\t<xs:element
+        name=\"DateQualifiers\"\n\t\t\t\t\t\t\ttype=\"tns:DateQualifiers\"\n\t\t\t\t\t\t\tminOccurs=\"0\"/>\n\t\t\t\t\t<xs:element
+        name=\"BinaryDataQualifiers\"\n\t\t\t\t\t\t\ttype=\"tns:BinaryDataQualifiers\"\n\t\t\t\t\t\t\tminOccurs=\"0\"/>\n\t\t\t\t</xs:sequence>\n\t\t\t</xs:complexType>\n\t\t\t<xs:simpleType
+        name=\"UUID\">\n\t\t\t\t<xs:restriction base=\"xs:string\">\n\t\t\t\t\t<xs:pattern
+        value=\"[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}\"/>\n\t\t\t\t</xs:restriction>\n\t\t\t</xs:simpleType>\n\t\t\t<xs:complexType
+        name=\"ValueListItemType\">\n\t\t\t\t<xs:sequence>\n\t\t\t\t\t<xs:element
+        name=\"value\"\n\t\t\t\t\t\t\tnillable=\"true\"/>\n\t\t\t\t\t<xs:element name=\"presentation\"\n\t\t\t\t\t\t\ttype=\"xs:string\"\n\t\t\t\t\t\t\tminOccurs=\"0\"/>\n\t\t\t\t\t<xs:element
+        name=\"checkState\"\n\t\t\t\t\t\t\ttype=\"xs:decimal\"\n\t\t\t\t\t\t\tminOccurs=\"0\"/>\n\t\t\t\t\t<xs:element
+        name=\"picture\"\n\t\t\t\t\t\t\tminOccurs=\"0\"/>\n\t\t\t\t\t<xs:element name=\"id\"\n\t\t\t\t\t\t\ttype=\"xs:long\"\n\t\t\t\t\t\t\tminOccurs=\"0\"/>\n\t\t\t\t\t<xs:element
+        name=\"formatPresentationSpecified\"\n\t\t\t\t\t\t\ttype=\"xs:boolean\"\n\t\t\t\t\t\t\tminOccurs=\"0\"/>\n\t\t\t\t\t<xs:element
+        name=\"formatPresentation\"\n\t\t\t\t\t\t\ttype=\"xs:string\"\n\t\t\t\t\t\t\tminOccurs=\"0\"/>\n\t\t\t\t</xs:sequence>\n\t\t\t</xs:complexType>\n\t\t\t<xs:complexType
+        name=\"ValueListType\">\n\t\t\t\t<xs:choice>\n\t\t\t\t\t<xs:element name=\"valueType\"\n\t\t\t\t\t\t\ttype=\"tns:TypeDescription\"/>\n\t\t\t\t\t<xs:element
+        name=\"availableValues\"\n\t\t\t\t\t\t\ttype=\"tns:ValueListType\"\n\t\t\t\t\t\t\tminOccurs=\"0\"/>\n\t\t\t\t\t<xs:element
+        name=\"lastId\"\n\t\t\t\t\t\t\ttype=\"xs:long\"\n\t\t\t\t\t\t\tminOccurs=\"0\"/>\n\t\t\t\t\t<xs:element
+        name=\"item\"\n\t\t\t\t\t\t\ttype=\"tns:ValueListItemType\"\n\t\t\t\t\t\t\tminOccurs=\"0\"\n\t\t\t\t\t\t\tmaxOccurs=\"unbounded\"/>\n\t\t\t\t</xs:choice>\n\t\t\t</xs:complexType>\n\t\t\t<xs:simpleType
+        name=\"ValueStorage\">\n\t\t\t\t<xs:restriction base=\"xs:base64Binary\"/>\n\t\t\t</xs:simpleType>\n\t\t\t<xs:complexType
+        name=\"ValueTable\">\n\t\t\t\t<xs:sequence>\n\t\t\t\t\t<xs:element name=\"column\"\n\t\t\t\t\t\t\ttype=\"tns:ValueTableColumn\"\n\t\t\t\t\t\t\tminOccurs=\"0\"\n\t\t\t\t\t\t\tmaxOccurs=\"unbounded\"/>\n\t\t\t\t\t<xs:element
+        name=\"index\"\n\t\t\t\t\t\t\ttype=\"tns:ValueTableIndex\"\n\t\t\t\t\t\t\tminOccurs=\"0\"\n\t\t\t\t\t\t\tmaxOccurs=\"unbounded\"/>\n\t\t\t\t\t<xs:element
+        name=\"row\"\n\t\t\t\t\t\t\ttype=\"tns:ValueTableRow\"\n\t\t\t\t\t\t\tminOccurs=\"0\"\n\t\t\t\t\t\t\tmaxOccurs=\"unbounded\"/>\n\t\t\t\t</xs:sequence>\n\t\t\t</xs:complexType>\n\t\t\t<xs:complexType
+        name=\"ValueTableColumn\">\n\t\t\t\t<xs:sequence>\n\t\t\t\t\t<xs:element name=\"Name\"\n\t\t\t\t\t\t\ttype=\"xs:NMTOKEN\"\n\t\t\t\t\t\t\tminOccurs=\"0\"/>\n\t\t\t\t\t<xs:element
+        name=\"ValueType\"\n\t\t\t\t\t\t\ttype=\"tns:TypeDescription\"\n\t\t\t\t\t\t\tminOccurs=\"0\"/>\n\t\t\t\t\t<xs:element
+        name=\"Title\"\n\t\t\t\t\t\t\ttype=\"xs:string\"\n\t\t\t\t\t\t\tminOccurs=\"0\"/>\n\t\t\t\t\t<xs:element
+        name=\"Width\"\n\t\t\t\t\t\t\ttype=\"xs:nonNegativeInteger\"\n\t\t\t\t\t\t\tminOccurs=\"0\"/>\n\t\t\t\t</xs:sequence>\n\t\t\t</xs:complexType>\n\t\t\t<xs:complexType
+        name=\"ValueTableIndex\">\n\t\t\t\t<xs:sequence>\n\t\t\t\t\t<xs:element name=\"column\"\n\t\t\t\t\t\t\ttype=\"xs:NMTOKEN\"\n\t\t\t\t\t\t\tmaxOccurs=\"unbounded\"/>\n\t\t\t\t</xs:sequence>\n\t\t\t</xs:complexType>\n\t\t\t<xs:complexType
+        name=\"ValueTableRow\">\n\t\t\t\t<xs:sequence>\n\t\t\t\t\t<xs:element name=\"Value\"\n\t\t\t\t\t\t\tnillable=\"true\"\n\t\t\t\t\t\t\tminOccurs=\"0\"\n\t\t\t\t\t\t\tmaxOccurs=\"unbounded\"/>\n\t\t\t\t</xs:sequence>\n\t\t\t</xs:complexType>\n\t\t\t<xs:complexType
+        name=\"ValueTree\">\n\t\t\t\t<xs:sequence>\n\t\t\t\t\t<xs:element name=\"column\"\n\t\t\t\t\t\t\ttype=\"tns:ValueTreeColumn\"\n\t\t\t\t\t\t\tminOccurs=\"0\"\n\t\t\t\t\t\t\tmaxOccurs=\"unbounded\"/>\n\t\t\t\t\t<xs:element
+        name=\"row\"\n\t\t\t\t\t\t\ttype=\"tns:ValueTreeRow\"\n\t\t\t\t\t\t\tminOccurs=\"0\"\n\t\t\t\t\t\t\tmaxOccurs=\"unbounded\"/>\n\t\t\t\t</xs:sequence>\n\t\t\t</xs:complexType>\n\t\t\t<xs:complexType
+        name=\"ValueTreeColumn\">\n\t\t\t\t<xs:sequence>\n\t\t\t\t\t<xs:element name=\"Name\"\n\t\t\t\t\t\t\ttype=\"xs:NMTOKEN\"\n\t\t\t\t\t\t\tminOccurs=\"0\"/>\n\t\t\t\t\t<xs:element
+        name=\"ValueType\"\n\t\t\t\t\t\t\ttype=\"tns:TypeDescription\"\n\t\t\t\t\t\t\tminOccurs=\"0\"/>\n\t\t\t\t\t<xs:element
+        name=\"Title\"\n\t\t\t\t\t\t\ttype=\"xs:string\"\n\t\t\t\t\t\t\tminOccurs=\"0\"/>\n\t\t\t\t\t<xs:element
+        name=\"Width\"\n\t\t\t\t\t\t\ttype=\"xs:nonNegativeInteger\"\n\t\t\t\t\t\t\tminOccurs=\"0\"/>\n\t\t\t\t</xs:sequence>\n\t\t\t</xs:complexType>\n\t\t\t<xs:complexType
+        name=\"ValueTreeRow\">\n\t\t\t\t<xs:sequence>\n\t\t\t\t\t<xs:element name=\"row\"\n\t\t\t\t\t\t\ttype=\"tns:ValueTreeRow\"\n\t\t\t\t\t\t\tminOccurs=\"0\"\n\t\t\t\t\t\t\tmaxOccurs=\"unbounded\"/>\n\t\t\t\t\t<xs:element
+        name=\"Value\"\n\t\t\t\t\t\t\tnillable=\"true\"\n\t\t\t\t\t\t\tminOccurs=\"0\"\n\t\t\t\t\t\t\tmaxOccurs=\"unbounded\"/>\n\t\t\t\t</xs:sequence>\n\t\t\t</xs:complexType>\n\t\t</xs:schema>\n\t\t<xs:schema
+        xmlns:xs=\"http://www.w3.org/2001/XMLSchema\"\n\t\t\t\txmlns:xs1=\"http://v8.1c.ru/8.1/data/core\"\n\t\t\t\txmlns:xs2=\"http://buhphone.com/PartnerWebAPI2\"\n\t\t\t\ttargetNamespace=\"http://buhphone.com/PartnerWebAPI2\"\n\t\t\t\telementFormDefault=\"qualified\">\n\t\t\t<xs:import
+        namespace=\"http://v8.1c.ru/8.1/data/core\"/>\n\t\t\t<xs:element name=\"ClientAdd\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ClientAddResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ClientAdditionalParameterAdd\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ClientAdditionalParameterAddResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ClientAdditionalParameterDelete\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ClientAdditionalParameterDeleteResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ClientAdditionalParameterEdit\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ClientAdditionalParameterEditResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ClientAdditionalParameterRead\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ClientAdditionalParameterReadResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ClientAdditionalParameterValueEdit\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ClientAdditionalParameterValueEditResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ClientAdditionalParameterValueRead\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ClientAdditionalParameterValueReadResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ClientDelete\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ClientDeleteResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ClientDepartmentAdd\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ClientDepartmentAddResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ClientDepartmentDelete\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ClientDepartmentDeleteResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ClientDepartmentEdit\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ClientDepartmentEditResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ClientDepartmentRead\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ClientDepartmentReadResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ClientEdit\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ClientEditResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ClientITSStatus\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ClientITSStatusResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ClientRead\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ClientReadResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ClientSetClientManager\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ClientSetClientManagerResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ClientSetServiceManager\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ClientSetServiceManagerResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ClientUserAdd\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ClientUserAddResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ClientUserDelete\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ClientUserDeleteResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ClientUserEdit\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ClientUserEditResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ClientUserRead\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ClientUserReadResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ClientUserSendWelcomeEmail\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ClientUserSendWelcomeEmailResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"CompetenceAdd\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"CompetenceAddResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"CompetenceDelete\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"CompetenceDeleteResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"CompetenceEdit\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"CompetenceEditResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"CompetenceRead\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"CompetenceReadResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"DepartmentAdd\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"DepartmentAddResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"DepartmentDelete\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"DepartmentDeleteResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"DepartmentEdit\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"DepartmentEditResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"DepartmentRead\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"DepartmentReadResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"GetHistoryOfAgentSessions\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"GetHistoryOfAgentSessionsResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"GetHistoryOfServiceCalls\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"GetHistoryOfServiceCallsResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"GetHistoryOfServiceCallsComments\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"GetHistoryOfServiceCallsCommentsResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"GetHistoryOfServiceChat\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"GetHistoryOfServiceChatResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"GetHistoryOfServiceFileTransfer\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"GetHistoryOfServiceFileTransferResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"GetHistoryOfServiceRASessions\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"GetHistoryOfServiceRASessionsResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"GetHistoryOfServiceRASessionsComments\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"GetHistoryOfServiceRASessionsCommentsResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"GetHistoryOfServiceTreatments\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"GetHistoryOfServiceTreatmentsResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"GetHistoryOfServiceTreatmentsComments\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"GetHistoryOfServiceTreatmentsCommentsResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"GetHistoryOfSIPCalls\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"GetHistoryOfSIPCallsResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"GetOpenedServiceTreatments\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"GetOpenedServiceTreatmentsResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"PartnerNotificationAdd\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"PartnerNotificationAddResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"RegionRead\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"RegionReadResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ServiceLineKindAdd\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ServiceLineKindAddResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ServiceLineKindDelete\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ServiceLineKindDeleteResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ServiceLineKindEdit\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ServiceLineKindEditResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ServiceLineKindRead\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ServiceLineKindReadResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"SpecialistAdd\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"SpecialistAddResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"SpecialistDelete\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"SpecialistDeleteResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"SpecialistEdit\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"SpecialistEditResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"SpecialistRead\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"SpecialistReadResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"SpecialistSendWelcomeEmail\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"SpecialistSendWelcomeEmailResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"StartPictureClicksHistoryRead\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"StartPictureClicksHistoryReadResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"StartPictureRead\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"StartPictureReadResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"StorefrontProductBuyRequestAccept\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"StorefrontProductBuyRequestAcceptResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"StorefrontProductBuyRequestRefuse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"StorefrontProductBuyRequestRefuseResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"StorefrontProductBuyRequestsGet\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"StorefrontProductBuyRequestsGetResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"StorefrontProductClicksHistoryRead\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"StorefrontProductClicksHistoryReadResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"StorefrontProductsRead\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"StorefrontProductsReadResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"UserServiceLineAdd\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"UserServiceLineAddResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"UserServiceLineDelete\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"UserServiceLineDeleteResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"UserServiceLineEdit\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"UserServiceLineEditResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"UserServiceLineRead\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"UserServiceLineReadResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"GetClientUsageStatistics\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"GetClientUsageStatisticsResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"GetHistoryOfColleaguesChat\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"GetHistoryOfColleaguesChatResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ServiceRequestChannelRead\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ServiceRequestChannelReadResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ServiceKindRead\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ServiceKindReadResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ServiceKindAdd\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ServiceKindAddResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ServiceKindEdit\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ServiceKindEditResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ServiceKindDelete\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ServiceKindDeleteResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ServiceRequestAdd\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ServiceRequestAddResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ServiceRequestEdit\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ServiceRequestEditResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ServiceRequestFiles\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"ServiceRequestID\"\n\t\t\t\t\t\t\t\ttype=\"xs:string\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ServiceRequestFilesResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ServiceRequestMessages\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"ServiceRequestID\"\n\t\t\t\t\t\t\t\ttype=\"xs:string\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ServiceRequestMessagesResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ServiceRequestSendTextMessage\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"ServiceRequestID\"\n\t\t\t\t\t\t\t\ttype=\"xs:string\"/>\n\t\t\t\t\t\t<xs:element
+        name=\"AuthorID\"\n\t\t\t\t\t\t\t\ttype=\"xs:string\"/>\n\t\t\t\t\t\t<xs:element
+        name=\"Message\"\n\t\t\t\t\t\t\t\ttype=\"xs:string\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ServiceRequestSendTextMessageResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ServiceRequestEditTextMessage\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"ServiceRequestID\"\n\t\t\t\t\t\t\t\ttype=\"xs:string\"/>\n\t\t\t\t\t\t<xs:element
+        name=\"MessageID\"\n\t\t\t\t\t\t\t\ttype=\"xs:string\"/>\n\t\t\t\t\t\t<xs:element
+        name=\"Message\"\n\t\t\t\t\t\t\t\ttype=\"xs:string\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ServiceRequestEditTextMessageResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ServiceRequestDeleteTextMessage\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"ServiceRequestID\"\n\t\t\t\t\t\t\t\ttype=\"xs:string\"/>\n\t\t\t\t\t\t<xs:element
+        name=\"MessageID\"\n\t\t\t\t\t\t\t\ttype=\"xs:string\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ServiceRequestDeleteTextMessageResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ServiceRequestAttachFile\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"ServiceRequestID\"\n\t\t\t\t\t\t\t\ttype=\"xs:string\"/>\n\t\t\t\t\t\t<xs:element
+        name=\"AuthorID\"\n\t\t\t\t\t\t\t\ttype=\"xs:string\"/>\n\t\t\t\t\t\t<xs:element
+        name=\"Name\"\n\t\t\t\t\t\t\t\ttype=\"xs:string\"/>\n\t\t\t\t\t\t<xs:element
+        name=\"Hash\"\n\t\t\t\t\t\t\t\ttype=\"xs:string\"/>\n\t\t\t\t\t\t<xs:element
+        name=\"Data\"\n\t\t\t\t\t\t\t\ttype=\"xs:base64Binary\"\n\t\t\t\t\t\t\t\txmime:expectedContentTypes=\"application/octet-stream\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ServiceRequestAttachFileResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ServiceRequestDeleteFile\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"FileID\"\n\t\t\t\t\t\t\t\ttype=\"xs:string\"/>\n\t\t\t\t\t\t<xs:element
+        name=\"AuthorID\"\n\t\t\t\t\t\t\t\ttype=\"xs:string\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ServiceRequestDeleteFileResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ServiceRequestDownloadFile\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"FileID\"\n\t\t\t\t\t\t\t\ttype=\"xs:string\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ServiceRequestDownloadFileResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t\t<xs:element
+        name=\"fileData\"\n\t\t\t\t\t\t\t\ttype=\"xs:base64Binary\"\n\t\t\t\t\t\t\t\txmime:expectedContentTypes=\"application/octet-stream\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ServiceRequestHistory\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ServiceRequestHistoryResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ServiceRequestRead\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ServiceRequestReadResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ServiceRequestStatusRead\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ServiceRequestStatusReadResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ServiceRequestTypeRead\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ServiceRequestTypeReadResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ServiceRequestTypeAdd\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ServiceRequestTypeAddResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ServiceRequestTypeEdit\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ServiceRequestTypeEditResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ServiceRequestTypeDelete\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"Params\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t\t<xs:element
+        name=\"ServiceRequestTypeDeleteResponse\">\n\t\t\t\t<xs:complexType>\n\t\t\t\t\t<xs:sequence>\n\t\t\t\t\t\t<xs:element
+        name=\"return\"\n\t\t\t\t\t\t\t\ttype=\"xs1:Structure\"/>\n\t\t\t\t\t</xs:sequence>\n\t\t\t\t</xs:complexType>\n\t\t\t</xs:element>\n\t\t</xs:schema>\n\t</types>\n\t<message
+        name=\"ClientAddRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ClientAdd\"/>\n\t</message>\n\t<message
+        name=\"ClientAddResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ClientAddResponse\"/>\n\t</message>\n\t<message
+        name=\"ClientAdditionalParameterAddRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ClientAdditionalParameterAdd\"/>\n\t</message>\n\t<message
+        name=\"ClientAdditionalParameterAddResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ClientAdditionalParameterAddResponse\"/>\n\t</message>\n\t<message
+        name=\"ClientAdditionalParameterDeleteRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ClientAdditionalParameterDelete\"/>\n\t</message>\n\t<message
+        name=\"ClientAdditionalParameterDeleteResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ClientAdditionalParameterDeleteResponse\"/>\n\t</message>\n\t<message
+        name=\"ClientAdditionalParameterEditRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ClientAdditionalParameterEdit\"/>\n\t</message>\n\t<message
+        name=\"ClientAdditionalParameterEditResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ClientAdditionalParameterEditResponse\"/>\n\t</message>\n\t<message
+        name=\"ClientAdditionalParameterReadRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ClientAdditionalParameterRead\"/>\n\t</message>\n\t<message
+        name=\"ClientAdditionalParameterReadResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ClientAdditionalParameterReadResponse\"/>\n\t</message>\n\t<message
+        name=\"ClientAdditionalParameterValueEditRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ClientAdditionalParameterValueEdit\"/>\n\t</message>\n\t<message
+        name=\"ClientAdditionalParameterValueEditResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ClientAdditionalParameterValueEditResponse\"/>\n\t</message>\n\t<message
+        name=\"ClientAdditionalParameterValueReadRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ClientAdditionalParameterValueRead\"/>\n\t</message>\n\t<message
+        name=\"ClientAdditionalParameterValueReadResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ClientAdditionalParameterValueReadResponse\"/>\n\t</message>\n\t<message
+        name=\"ClientDeleteRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ClientDelete\"/>\n\t</message>\n\t<message
+        name=\"ClientDeleteResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ClientDeleteResponse\"/>\n\t</message>\n\t<message
+        name=\"ClientDepartmentAddRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ClientDepartmentAdd\"/>\n\t</message>\n\t<message
+        name=\"ClientDepartmentAddResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ClientDepartmentAddResponse\"/>\n\t</message>\n\t<message
+        name=\"ClientDepartmentDeleteRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ClientDepartmentDelete\"/>\n\t</message>\n\t<message
+        name=\"ClientDepartmentDeleteResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ClientDepartmentDeleteResponse\"/>\n\t</message>\n\t<message
+        name=\"ClientDepartmentEditRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ClientDepartmentEdit\"/>\n\t</message>\n\t<message
+        name=\"ClientDepartmentEditResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ClientDepartmentEditResponse\"/>\n\t</message>\n\t<message
+        name=\"ClientDepartmentReadRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ClientDepartmentRead\"/>\n\t</message>\n\t<message
+        name=\"ClientDepartmentReadResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ClientDepartmentReadResponse\"/>\n\t</message>\n\t<message
+        name=\"ClientEditRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ClientEdit\"/>\n\t</message>\n\t<message
+        name=\"ClientEditResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ClientEditResponse\"/>\n\t</message>\n\t<message
+        name=\"ClientITSStatusRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ClientITSStatus\"/>\n\t</message>\n\t<message
+        name=\"ClientITSStatusResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ClientITSStatusResponse\"/>\n\t</message>\n\t<message
+        name=\"ClientReadRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ClientRead\"/>\n\t</message>\n\t<message
+        name=\"ClientReadResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ClientReadResponse\"/>\n\t</message>\n\t<message
+        name=\"ClientSetClientManagerRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ClientSetClientManager\"/>\n\t</message>\n\t<message
+        name=\"ClientSetClientManagerResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ClientSetClientManagerResponse\"/>\n\t</message>\n\t<message
+        name=\"ClientSetServiceManagerRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ClientSetServiceManager\"/>\n\t</message>\n\t<message
+        name=\"ClientSetServiceManagerResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ClientSetServiceManagerResponse\"/>\n\t</message>\n\t<message
+        name=\"ClientUserAddRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ClientUserAdd\"/>\n\t</message>\n\t<message
+        name=\"ClientUserAddResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ClientUserAddResponse\"/>\n\t</message>\n\t<message
+        name=\"ClientUserDeleteRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ClientUserDelete\"/>\n\t</message>\n\t<message
+        name=\"ClientUserDeleteResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ClientUserDeleteResponse\"/>\n\t</message>\n\t<message
+        name=\"ClientUserEditRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ClientUserEdit\"/>\n\t</message>\n\t<message
+        name=\"ClientUserEditResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ClientUserEditResponse\"/>\n\t</message>\n\t<message
+        name=\"ClientUserReadRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ClientUserRead\"/>\n\t</message>\n\t<message
+        name=\"ClientUserReadResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ClientUserReadResponse\"/>\n\t</message>\n\t<message
+        name=\"ClientUserSendWelcomeEmailRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ClientUserSendWelcomeEmail\"/>\n\t</message>\n\t<message
+        name=\"ClientUserSendWelcomeEmailResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ClientUserSendWelcomeEmailResponse\"/>\n\t</message>\n\t<message
+        name=\"CompetenceAddRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:CompetenceAdd\"/>\n\t</message>\n\t<message
+        name=\"CompetenceAddResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:CompetenceAddResponse\"/>\n\t</message>\n\t<message
+        name=\"CompetenceDeleteRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:CompetenceDelete\"/>\n\t</message>\n\t<message
+        name=\"CompetenceDeleteResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:CompetenceDeleteResponse\"/>\n\t</message>\n\t<message
+        name=\"CompetenceEditRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:CompetenceEdit\"/>\n\t</message>\n\t<message
+        name=\"CompetenceEditResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:CompetenceEditResponse\"/>\n\t</message>\n\t<message
+        name=\"CompetenceReadRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:CompetenceRead\"/>\n\t</message>\n\t<message
+        name=\"CompetenceReadResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:CompetenceReadResponse\"/>\n\t</message>\n\t<message
+        name=\"DepartmentAddRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:DepartmentAdd\"/>\n\t</message>\n\t<message
+        name=\"DepartmentAddResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:DepartmentAddResponse\"/>\n\t</message>\n\t<message
+        name=\"DepartmentDeleteRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:DepartmentDelete\"/>\n\t</message>\n\t<message
+        name=\"DepartmentDeleteResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:DepartmentDeleteResponse\"/>\n\t</message>\n\t<message
+        name=\"DepartmentEditRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:DepartmentEdit\"/>\n\t</message>\n\t<message
+        name=\"DepartmentEditResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:DepartmentEditResponse\"/>\n\t</message>\n\t<message
+        name=\"DepartmentReadRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:DepartmentRead\"/>\n\t</message>\n\t<message
+        name=\"DepartmentReadResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:DepartmentReadResponse\"/>\n\t</message>\n\t<message
+        name=\"GetHistoryOfAgentSessionsRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:GetHistoryOfAgentSessions\"/>\n\t</message>\n\t<message
+        name=\"GetHistoryOfAgentSessionsResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:GetHistoryOfAgentSessionsResponse\"/>\n\t</message>\n\t<message
+        name=\"GetHistoryOfServiceCallsRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:GetHistoryOfServiceCalls\"/>\n\t</message>\n\t<message
+        name=\"GetHistoryOfServiceCallsResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:GetHistoryOfServiceCallsResponse\"/>\n\t</message>\n\t<message
+        name=\"GetHistoryOfServiceCallsCommentsRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:GetHistoryOfServiceCallsComments\"/>\n\t</message>\n\t<message
+        name=\"GetHistoryOfServiceCallsCommentsResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:GetHistoryOfServiceCallsCommentsResponse\"/>\n\t</message>\n\t<message
+        name=\"GetHistoryOfServiceChatRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:GetHistoryOfServiceChat\"/>\n\t</message>\n\t<message
+        name=\"GetHistoryOfServiceChatResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:GetHistoryOfServiceChatResponse\"/>\n\t</message>\n\t<message
+        name=\"GetHistoryOfServiceFileTransferRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:GetHistoryOfServiceFileTransfer\"/>\n\t</message>\n\t<message
+        name=\"GetHistoryOfServiceFileTransferResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:GetHistoryOfServiceFileTransferResponse\"/>\n\t</message>\n\t<message
+        name=\"GetHistoryOfServiceRASessionsRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:GetHistoryOfServiceRASessions\"/>\n\t</message>\n\t<message
+        name=\"GetHistoryOfServiceRASessionsResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:GetHistoryOfServiceRASessionsResponse\"/>\n\t</message>\n\t<message
+        name=\"GetHistoryOfServiceRASessionsCommentsRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:GetHistoryOfServiceRASessionsComments\"/>\n\t</message>\n\t<message
+        name=\"GetHistoryOfServiceRASessionsCommentsResponseMessage\">\n\t\t<part
+        name=\"parameters\"\n\t\t\t\telement=\"tns:GetHistoryOfServiceRASessionsCommentsResponse\"/>\n\t</message>\n\t<message
+        name=\"GetHistoryOfServiceTreatmentsRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:GetHistoryOfServiceTreatments\"/>\n\t</message>\n\t<message
+        name=\"GetHistoryOfServiceTreatmentsResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:GetHistoryOfServiceTreatmentsResponse\"/>\n\t</message>\n\t<message
+        name=\"GetHistoryOfServiceTreatmentsCommentsRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:GetHistoryOfServiceTreatmentsComments\"/>\n\t</message>\n\t<message
+        name=\"GetHistoryOfServiceTreatmentsCommentsResponseMessage\">\n\t\t<part
+        name=\"parameters\"\n\t\t\t\telement=\"tns:GetHistoryOfServiceTreatmentsCommentsResponse\"/>\n\t</message>\n\t<message
+        name=\"GetHistoryOfSIPCallsRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:GetHistoryOfSIPCalls\"/>\n\t</message>\n\t<message
+        name=\"GetHistoryOfSIPCallsResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:GetHistoryOfSIPCallsResponse\"/>\n\t</message>\n\t<message
+        name=\"GetOpenedServiceTreatmentsRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:GetOpenedServiceTreatments\"/>\n\t</message>\n\t<message
+        name=\"GetOpenedServiceTreatmentsResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:GetOpenedServiceTreatmentsResponse\"/>\n\t</message>\n\t<message
+        name=\"PartnerNotificationAddRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:PartnerNotificationAdd\"/>\n\t</message>\n\t<message
+        name=\"PartnerNotificationAddResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:PartnerNotificationAddResponse\"/>\n\t</message>\n\t<message
+        name=\"RegionReadRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:RegionRead\"/>\n\t</message>\n\t<message
+        name=\"RegionReadResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:RegionReadResponse\"/>\n\t</message>\n\t<message
+        name=\"ServiceLineKindAddRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ServiceLineKindAdd\"/>\n\t</message>\n\t<message
+        name=\"ServiceLineKindAddResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ServiceLineKindAddResponse\"/>\n\t</message>\n\t<message
+        name=\"ServiceLineKindDeleteRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ServiceLineKindDelete\"/>\n\t</message>\n\t<message
+        name=\"ServiceLineKindDeleteResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ServiceLineKindDeleteResponse\"/>\n\t</message>\n\t<message
+        name=\"ServiceLineKindEditRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ServiceLineKindEdit\"/>\n\t</message>\n\t<message
+        name=\"ServiceLineKindEditResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ServiceLineKindEditResponse\"/>\n\t</message>\n\t<message
+        name=\"ServiceLineKindReadRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ServiceLineKindRead\"/>\n\t</message>\n\t<message
+        name=\"ServiceLineKindReadResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ServiceLineKindReadResponse\"/>\n\t</message>\n\t<message
+        name=\"SpecialistAddRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:SpecialistAdd\"/>\n\t</message>\n\t<message
+        name=\"SpecialistAddResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:SpecialistAddResponse\"/>\n\t</message>\n\t<message
+        name=\"SpecialistDeleteRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:SpecialistDelete\"/>\n\t</message>\n\t<message
+        name=\"SpecialistDeleteResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:SpecialistDeleteResponse\"/>\n\t</message>\n\t<message
+        name=\"SpecialistEditRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:SpecialistEdit\"/>\n\t</message>\n\t<message
+        name=\"SpecialistEditResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:SpecialistEditResponse\"/>\n\t</message>\n\t<message
+        name=\"SpecialistReadRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:SpecialistRead\"/>\n\t</message>\n\t<message
+        name=\"SpecialistReadResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:SpecialistReadResponse\"/>\n\t</message>\n\t<message
+        name=\"SpecialistSendWelcomeEmailRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:SpecialistSendWelcomeEmail\"/>\n\t</message>\n\t<message
+        name=\"SpecialistSendWelcomeEmailResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:SpecialistSendWelcomeEmailResponse\"/>\n\t</message>\n\t<message
+        name=\"StartPictureClicksHistoryReadRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:StartPictureClicksHistoryRead\"/>\n\t</message>\n\t<message
+        name=\"StartPictureClicksHistoryReadResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:StartPictureClicksHistoryReadResponse\"/>\n\t</message>\n\t<message
+        name=\"StartPictureReadRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:StartPictureRead\"/>\n\t</message>\n\t<message
+        name=\"StartPictureReadResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:StartPictureReadResponse\"/>\n\t</message>\n\t<message
+        name=\"StorefrontProductBuyRequestAcceptRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:StorefrontProductBuyRequestAccept\"/>\n\t</message>\n\t<message
+        name=\"StorefrontProductBuyRequestAcceptResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:StorefrontProductBuyRequestAcceptResponse\"/>\n\t</message>\n\t<message
+        name=\"StorefrontProductBuyRequestRefuseRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:StorefrontProductBuyRequestRefuse\"/>\n\t</message>\n\t<message
+        name=\"StorefrontProductBuyRequestRefuseResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:StorefrontProductBuyRequestRefuseResponse\"/>\n\t</message>\n\t<message
+        name=\"StorefrontProductBuyRequestsGetRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:StorefrontProductBuyRequestsGet\"/>\n\t</message>\n\t<message
+        name=\"StorefrontProductBuyRequestsGetResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:StorefrontProductBuyRequestsGetResponse\"/>\n\t</message>\n\t<message
+        name=\"StorefrontProductClicksHistoryReadRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:StorefrontProductClicksHistoryRead\"/>\n\t</message>\n\t<message
+        name=\"StorefrontProductClicksHistoryReadResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:StorefrontProductClicksHistoryReadResponse\"/>\n\t</message>\n\t<message
+        name=\"StorefrontProductsReadRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:StorefrontProductsRead\"/>\n\t</message>\n\t<message
+        name=\"StorefrontProductsReadResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:StorefrontProductsReadResponse\"/>\n\t</message>\n\t<message
+        name=\"UserServiceLineAddRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:UserServiceLineAdd\"/>\n\t</message>\n\t<message
+        name=\"UserServiceLineAddResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:UserServiceLineAddResponse\"/>\n\t</message>\n\t<message
+        name=\"UserServiceLineDeleteRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:UserServiceLineDelete\"/>\n\t</message>\n\t<message
+        name=\"UserServiceLineDeleteResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:UserServiceLineDeleteResponse\"/>\n\t</message>\n\t<message
+        name=\"UserServiceLineEditRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:UserServiceLineEdit\"/>\n\t</message>\n\t<message
+        name=\"UserServiceLineEditResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:UserServiceLineEditResponse\"/>\n\t</message>\n\t<message
+        name=\"UserServiceLineReadRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:UserServiceLineRead\"/>\n\t</message>\n\t<message
+        name=\"UserServiceLineReadResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:UserServiceLineReadResponse\"/>\n\t</message>\n\t<message
+        name=\"GetClientUsageStatisticsRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:GetClientUsageStatistics\"/>\n\t</message>\n\t<message
+        name=\"GetClientUsageStatisticsResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:GetClientUsageStatisticsResponse\"/>\n\t</message>\n\t<message
+        name=\"GetHistoryOfColleaguesChatRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:GetHistoryOfColleaguesChat\"/>\n\t</message>\n\t<message
+        name=\"GetHistoryOfColleaguesChatResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:GetHistoryOfColleaguesChatResponse\"/>\n\t</message>\n\t<message
+        name=\"ServiceRequestChannelReadRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ServiceRequestChannelRead\"/>\n\t</message>\n\t<message
+        name=\"ServiceRequestChannelReadResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ServiceRequestChannelReadResponse\"/>\n\t</message>\n\t<message
+        name=\"ServiceKindReadRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ServiceKindRead\"/>\n\t</message>\n\t<message
+        name=\"ServiceKindReadResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ServiceKindReadResponse\"/>\n\t</message>\n\t<message
+        name=\"ServiceKindAddRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ServiceKindAdd\"/>\n\t</message>\n\t<message
+        name=\"ServiceKindAddResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ServiceKindAddResponse\"/>\n\t</message>\n\t<message
+        name=\"ServiceKindEditRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ServiceKindEdit\"/>\n\t</message>\n\t<message
+        name=\"ServiceKindEditResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ServiceKindEditResponse\"/>\n\t</message>\n\t<message
+        name=\"ServiceKindDeleteRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ServiceKindDelete\"/>\n\t</message>\n\t<message
+        name=\"ServiceKindDeleteResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ServiceKindDeleteResponse\"/>\n\t</message>\n\t<message
+        name=\"ServiceRequestAddRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ServiceRequestAdd\"/>\n\t</message>\n\t<message
+        name=\"ServiceRequestAddResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ServiceRequestAddResponse\"/>\n\t</message>\n\t<message
+        name=\"ServiceRequestEditRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ServiceRequestEdit\"/>\n\t</message>\n\t<message
+        name=\"ServiceRequestEditResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ServiceRequestEditResponse\"/>\n\t</message>\n\t<message
+        name=\"ServiceRequestFilesRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ServiceRequestFiles\"/>\n\t</message>\n\t<message
+        name=\"ServiceRequestFilesResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ServiceRequestFilesResponse\"/>\n\t</message>\n\t<message
+        name=\"ServiceRequestMessagesRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ServiceRequestMessages\"/>\n\t</message>\n\t<message
+        name=\"ServiceRequestMessagesResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ServiceRequestMessagesResponse\"/>\n\t</message>\n\t<message
+        name=\"ServiceRequestSendTextMessageRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ServiceRequestSendTextMessage\"/>\n\t</message>\n\t<message
+        name=\"ServiceRequestSendTextMessageResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ServiceRequestSendTextMessageResponse\"/>\n\t</message>\n\t<message
+        name=\"ServiceRequestEditTextMessageRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ServiceRequestEditTextMessage\"/>\n\t</message>\n\t<message
+        name=\"ServiceRequestEditTextMessageResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ServiceRequestEditTextMessageResponse\"/>\n\t</message>\n\t<message
+        name=\"ServiceRequestDeleteTextMessageRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ServiceRequestDeleteTextMessage\"/>\n\t</message>\n\t<message
+        name=\"ServiceRequestDeleteTextMessageResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ServiceRequestDeleteTextMessageResponse\"/>\n\t</message>\n\t<message
+        name=\"ServiceRequestAttachFileRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ServiceRequestAttachFile\"/>\n\t</message>\n\t<message
+        name=\"ServiceRequestAttachFileResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ServiceRequestAttachFileResponse\"/>\n\t</message>\n\t<message
+        name=\"ServiceRequestDeleteFileRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ServiceRequestDeleteFile\"/>\n\t</message>\n\t<message
+        name=\"ServiceRequestDeleteFileResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ServiceRequestDeleteFileResponse\"/>\n\t</message>\n\t<message
+        name=\"ServiceRequestDownloadFileRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ServiceRequestDownloadFile\"/>\n\t</message>\n\t<message
+        name=\"ServiceRequestDownloadFileResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ServiceRequestDownloadFileResponse\"/>\n\t</message>\n\t<message
+        name=\"ServiceRequestHistoryRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ServiceRequestHistory\"/>\n\t</message>\n\t<message
+        name=\"ServiceRequestHistoryResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ServiceRequestHistoryResponse\"/>\n\t</message>\n\t<message
+        name=\"ServiceRequestReadRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ServiceRequestRead\"/>\n\t</message>\n\t<message
+        name=\"ServiceRequestReadResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ServiceRequestReadResponse\"/>\n\t</message>\n\t<message
+        name=\"ServiceRequestStatusReadRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ServiceRequestStatusRead\"/>\n\t</message>\n\t<message
+        name=\"ServiceRequestStatusReadResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ServiceRequestStatusReadResponse\"/>\n\t</message>\n\t<message
+        name=\"ServiceRequestTypeReadRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ServiceRequestTypeRead\"/>\n\t</message>\n\t<message
+        name=\"ServiceRequestTypeReadResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ServiceRequestTypeReadResponse\"/>\n\t</message>\n\t<message
+        name=\"ServiceRequestTypeAddRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ServiceRequestTypeAdd\"/>\n\t</message>\n\t<message
+        name=\"ServiceRequestTypeAddResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ServiceRequestTypeAddResponse\"/>\n\t</message>\n\t<message
+        name=\"ServiceRequestTypeEditRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ServiceRequestTypeEdit\"/>\n\t</message>\n\t<message
+        name=\"ServiceRequestTypeEditResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ServiceRequestTypeEditResponse\"/>\n\t</message>\n\t<message
+        name=\"ServiceRequestTypeDeleteRequestMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ServiceRequestTypeDelete\"/>\n\t</message>\n\t<message
+        name=\"ServiceRequestTypeDeleteResponseMessage\">\n\t\t<part name=\"parameters\"\n\t\t\t\telement=\"tns:ServiceRequestTypeDeleteResponse\"/>\n\t</message>\n\t<portType
+        name=\"PartnerWebAPI2PortType\">\n\t\t<operation name=\"ClientAdd\">\n\t\t\t<input
+        message=\"tns:ClientAddRequestMessage\"/>\n\t\t\t<output message=\"tns:ClientAddResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"ClientAdditionalParameterAdd\">\n\t\t\t<input message=\"tns:ClientAdditionalParameterAddRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:ClientAdditionalParameterAddResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"ClientAdditionalParameterDelete\">\n\t\t\t<input message=\"tns:ClientAdditionalParameterDeleteRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:ClientAdditionalParameterDeleteResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"ClientAdditionalParameterEdit\">\n\t\t\t<input message=\"tns:ClientAdditionalParameterEditRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:ClientAdditionalParameterEditResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"ClientAdditionalParameterRead\">\n\t\t\t<input message=\"tns:ClientAdditionalParameterReadRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:ClientAdditionalParameterReadResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"ClientAdditionalParameterValueEdit\">\n\t\t\t<input message=\"tns:ClientAdditionalParameterValueEditRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:ClientAdditionalParameterValueEditResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"ClientAdditionalParameterValueRead\">\n\t\t\t<input message=\"tns:ClientAdditionalParameterValueReadRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:ClientAdditionalParameterValueReadResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"ClientDelete\">\n\t\t\t<input message=\"tns:ClientDeleteRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:ClientDeleteResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"ClientDepartmentAdd\">\n\t\t\t<input message=\"tns:ClientDepartmentAddRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:ClientDepartmentAddResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"ClientDepartmentDelete\">\n\t\t\t<input message=\"tns:ClientDepartmentDeleteRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:ClientDepartmentDeleteResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"ClientDepartmentEdit\">\n\t\t\t<input message=\"tns:ClientDepartmentEditRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:ClientDepartmentEditResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"ClientDepartmentRead\">\n\t\t\t<input message=\"tns:ClientDepartmentReadRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:ClientDepartmentReadResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"ClientEdit\">\n\t\t\t<input message=\"tns:ClientEditRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:ClientEditResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"ClientITSStatus\">\n\t\t\t<input message=\"tns:ClientITSStatusRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:ClientITSStatusResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"ClientRead\">\n\t\t\t<input message=\"tns:ClientReadRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:ClientReadResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"ClientSetClientManager\">\n\t\t\t<input message=\"tns:ClientSetClientManagerRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:ClientSetClientManagerResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"ClientSetServiceManager\">\n\t\t\t<input message=\"tns:ClientSetServiceManagerRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:ClientSetServiceManagerResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"ClientUserAdd\">\n\t\t\t<input message=\"tns:ClientUserAddRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:ClientUserAddResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"ClientUserDelete\">\n\t\t\t<input message=\"tns:ClientUserDeleteRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:ClientUserDeleteResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"ClientUserEdit\">\n\t\t\t<input message=\"tns:ClientUserEditRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:ClientUserEditResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"ClientUserRead\">\n\t\t\t<input message=\"tns:ClientUserReadRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:ClientUserReadResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"ClientUserSendWelcomeEmail\">\n\t\t\t<input message=\"tns:ClientUserSendWelcomeEmailRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:ClientUserSendWelcomeEmailResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"CompetenceAdd\">\n\t\t\t<input message=\"tns:CompetenceAddRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:CompetenceAddResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"CompetenceDelete\">\n\t\t\t<input message=\"tns:CompetenceDeleteRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:CompetenceDeleteResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"CompetenceEdit\">\n\t\t\t<input message=\"tns:CompetenceEditRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:CompetenceEditResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"CompetenceRead\">\n\t\t\t<input message=\"tns:CompetenceReadRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:CompetenceReadResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"DepartmentAdd\">\n\t\t\t<input message=\"tns:DepartmentAddRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:DepartmentAddResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"DepartmentDelete\">\n\t\t\t<input message=\"tns:DepartmentDeleteRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:DepartmentDeleteResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"DepartmentEdit\">\n\t\t\t<input message=\"tns:DepartmentEditRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:DepartmentEditResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"DepartmentRead\">\n\t\t\t<input message=\"tns:DepartmentReadRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:DepartmentReadResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"GetHistoryOfAgentSessions\">\n\t\t\t<input message=\"tns:GetHistoryOfAgentSessionsRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:GetHistoryOfAgentSessionsResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"GetHistoryOfServiceCalls\">\n\t\t\t<input message=\"tns:GetHistoryOfServiceCallsRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:GetHistoryOfServiceCallsResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"GetHistoryOfServiceCallsComments\">\n\t\t\t<input message=\"tns:GetHistoryOfServiceCallsCommentsRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:GetHistoryOfServiceCallsCommentsResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"GetHistoryOfServiceChat\">\n\t\t\t<input message=\"tns:GetHistoryOfServiceChatRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:GetHistoryOfServiceChatResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"GetHistoryOfServiceFileTransfer\">\n\t\t\t<input message=\"tns:GetHistoryOfServiceFileTransferRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:GetHistoryOfServiceFileTransferResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"GetHistoryOfServiceRASessions\">\n\t\t\t<input message=\"tns:GetHistoryOfServiceRASessionsRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:GetHistoryOfServiceRASessionsResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"GetHistoryOfServiceRASessionsComments\">\n\t\t\t<input message=\"tns:GetHistoryOfServiceRASessionsCommentsRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:GetHistoryOfServiceRASessionsCommentsResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"GetHistoryOfServiceTreatments\">\n\t\t\t<input message=\"tns:GetHistoryOfServiceTreatmentsRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:GetHistoryOfServiceTreatmentsResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"GetHistoryOfServiceTreatmentsComments\">\n\t\t\t<input message=\"tns:GetHistoryOfServiceTreatmentsCommentsRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:GetHistoryOfServiceTreatmentsCommentsResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"GetHistoryOfSIPCalls\">\n\t\t\t<input message=\"tns:GetHistoryOfSIPCallsRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:GetHistoryOfSIPCallsResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"GetOpenedServiceTreatments\">\n\t\t\t<input message=\"tns:GetOpenedServiceTreatmentsRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:GetOpenedServiceTreatmentsResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"PartnerNotificationAdd\">\n\t\t\t<input message=\"tns:PartnerNotificationAddRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:PartnerNotificationAddResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"RegionRead\">\n\t\t\t<input message=\"tns:RegionReadRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:RegionReadResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"ServiceLineKindAdd\">\n\t\t\t<input message=\"tns:ServiceLineKindAddRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:ServiceLineKindAddResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"ServiceLineKindDelete\">\n\t\t\t<input message=\"tns:ServiceLineKindDeleteRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:ServiceLineKindDeleteResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"ServiceLineKindEdit\">\n\t\t\t<input message=\"tns:ServiceLineKindEditRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:ServiceLineKindEditResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"ServiceLineKindRead\">\n\t\t\t<input message=\"tns:ServiceLineKindReadRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:ServiceLineKindReadResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"SpecialistAdd\">\n\t\t\t<input message=\"tns:SpecialistAddRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:SpecialistAddResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"SpecialistDelete\">\n\t\t\t<input message=\"tns:SpecialistDeleteRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:SpecialistDeleteResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"SpecialistEdit\">\n\t\t\t<input message=\"tns:SpecialistEditRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:SpecialistEditResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"SpecialistRead\">\n\t\t\t<input message=\"tns:SpecialistReadRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:SpecialistReadResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"SpecialistSendWelcomeEmail\">\n\t\t\t<input message=\"tns:SpecialistSendWelcomeEmailRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:SpecialistSendWelcomeEmailResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"StartPictureClicksHistoryRead\">\n\t\t\t<input message=\"tns:StartPictureClicksHistoryReadRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:StartPictureClicksHistoryReadResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"StartPictureRead\">\n\t\t\t<input message=\"tns:StartPictureReadRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:StartPictureReadResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"StorefrontProductBuyRequestAccept\">\n\t\t\t<input message=\"tns:StorefrontProductBuyRequestAcceptRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:StorefrontProductBuyRequestAcceptResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"StorefrontProductBuyRequestRefuse\">\n\t\t\t<input message=\"tns:StorefrontProductBuyRequestRefuseRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:StorefrontProductBuyRequestRefuseResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"StorefrontProductBuyRequestsGet\">\n\t\t\t<input message=\"tns:StorefrontProductBuyRequestsGetRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:StorefrontProductBuyRequestsGetResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"StorefrontProductClicksHistoryRead\">\n\t\t\t<input message=\"tns:StorefrontProductClicksHistoryReadRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:StorefrontProductClicksHistoryReadResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"StorefrontProductsRead\">\n\t\t\t<input message=\"tns:StorefrontProductsReadRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:StorefrontProductsReadResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"UserServiceLineAdd\">\n\t\t\t<input message=\"tns:UserServiceLineAddRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:UserServiceLineAddResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"UserServiceLineDelete\">\n\t\t\t<input message=\"tns:UserServiceLineDeleteRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:UserServiceLineDeleteResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"UserServiceLineEdit\">\n\t\t\t<input message=\"tns:UserServiceLineEditRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:UserServiceLineEditResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"UserServiceLineRead\">\n\t\t\t<input message=\"tns:UserServiceLineReadRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:UserServiceLineReadResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"GetClientUsageStatistics\">\n\t\t\t<input message=\"tns:GetClientUsageStatisticsRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:GetClientUsageStatisticsResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"GetHistoryOfColleaguesChat\">\n\t\t\t<input message=\"tns:GetHistoryOfColleaguesChatRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:GetHistoryOfColleaguesChatResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"ServiceRequestChannelRead\">\n\t\t\t<input message=\"tns:ServiceRequestChannelReadRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:ServiceRequestChannelReadResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"ServiceKindRead\">\n\t\t\t<input message=\"tns:ServiceKindReadRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:ServiceKindReadResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"ServiceKindAdd\">\n\t\t\t<input message=\"tns:ServiceKindAddRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:ServiceKindAddResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"ServiceKindEdit\">\n\t\t\t<input message=\"tns:ServiceKindEditRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:ServiceKindEditResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"ServiceKindDelete\">\n\t\t\t<input message=\"tns:ServiceKindDeleteRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:ServiceKindDeleteResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"ServiceRequestAdd\">\n\t\t\t<input message=\"tns:ServiceRequestAddRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:ServiceRequestAddResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"ServiceRequestEdit\">\n\t\t\t<input message=\"tns:ServiceRequestEditRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:ServiceRequestEditResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"ServiceRequestFiles\">\n\t\t\t<input message=\"tns:ServiceRequestFilesRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:ServiceRequestFilesResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"ServiceRequestMessages\">\n\t\t\t<input message=\"tns:ServiceRequestMessagesRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:ServiceRequestMessagesResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"ServiceRequestSendTextMessage\">\n\t\t\t<input message=\"tns:ServiceRequestSendTextMessageRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:ServiceRequestSendTextMessageResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"ServiceRequestEditTextMessage\">\n\t\t\t<input message=\"tns:ServiceRequestEditTextMessageRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:ServiceRequestEditTextMessageResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"ServiceRequestDeleteTextMessage\">\n\t\t\t<input message=\"tns:ServiceRequestDeleteTextMessageRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:ServiceRequestDeleteTextMessageResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"ServiceRequestAttachFile\">\n\t\t\t<input message=\"tns:ServiceRequestAttachFileRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:ServiceRequestAttachFileResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"ServiceRequestDeleteFile\">\n\t\t\t<input message=\"tns:ServiceRequestDeleteFileRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:ServiceRequestDeleteFileResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"ServiceRequestDownloadFile\">\n\t\t\t<input message=\"tns:ServiceRequestDownloadFileRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:ServiceRequestDownloadFileResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"ServiceRequestHistory\">\n\t\t\t<input message=\"tns:ServiceRequestHistoryRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:ServiceRequestHistoryResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"ServiceRequestRead\">\n\t\t\t<input message=\"tns:ServiceRequestReadRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:ServiceRequestReadResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"ServiceRequestStatusRead\">\n\t\t\t<input message=\"tns:ServiceRequestStatusReadRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:ServiceRequestStatusReadResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"ServiceRequestTypeRead\">\n\t\t\t<input message=\"tns:ServiceRequestTypeReadRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:ServiceRequestTypeReadResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"ServiceRequestTypeAdd\">\n\t\t\t<input message=\"tns:ServiceRequestTypeAddRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:ServiceRequestTypeAddResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"ServiceRequestTypeEdit\">\n\t\t\t<input message=\"tns:ServiceRequestTypeEditRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:ServiceRequestTypeEditResponseMessage\"/>\n\t\t</operation>\n\t\t<operation
+        name=\"ServiceRequestTypeDelete\">\n\t\t\t<input message=\"tns:ServiceRequestTypeDeleteRequestMessage\"/>\n\t\t\t<output
+        message=\"tns:ServiceRequestTypeDeleteResponseMessage\"/>\n\t\t</operation>\n\t</portType>\n\t<binding
+        name=\"PartnerWebAPI2SoapBinding\"\n\t\t\ttype=\"tns:PartnerWebAPI2PortType\">\n\t\t<soapbind:binding
+        style=\"document\"\n\t\t\t\ttransport=\"http://schemas.xmlsoap.org/soap/http\"/>\n\t\t<operation
+        name=\"ClientAdd\">\n\t\t\t<soapbind:operation style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ClientAdd\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ClientAdditionalParameterAdd\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ClientAdditionalParameterAdd\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ClientAdditionalParameterDelete\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ClientAdditionalParameterDelete\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ClientAdditionalParameterEdit\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ClientAdditionalParameterEdit\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ClientAdditionalParameterRead\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ClientAdditionalParameterRead\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ClientAdditionalParameterValueEdit\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ClientAdditionalParameterValueEdit\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ClientAdditionalParameterValueRead\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ClientAdditionalParameterValueRead\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ClientDelete\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ClientDelete\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ClientDepartmentAdd\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ClientDepartmentAdd\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ClientDepartmentDelete\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ClientDepartmentDelete\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ClientDepartmentEdit\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ClientDepartmentEdit\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ClientDepartmentRead\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ClientDepartmentRead\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ClientEdit\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ClientEdit\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ClientITSStatus\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ClientITSStatus\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ClientRead\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ClientRead\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ClientSetClientManager\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ClientSetClientManager\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ClientSetServiceManager\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ClientSetServiceManager\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ClientUserAdd\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ClientUserAdd\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ClientUserDelete\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ClientUserDelete\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ClientUserEdit\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ClientUserEdit\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ClientUserRead\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ClientUserRead\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ClientUserSendWelcomeEmail\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ClientUserSendWelcomeEmail\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"CompetenceAdd\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:CompetenceAdd\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"CompetenceDelete\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:CompetenceDelete\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"CompetenceEdit\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:CompetenceEdit\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"CompetenceRead\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:CompetenceRead\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"DepartmentAdd\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:DepartmentAdd\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"DepartmentDelete\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:DepartmentDelete\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"DepartmentEdit\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:DepartmentEdit\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"DepartmentRead\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:DepartmentRead\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"GetHistoryOfAgentSessions\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:GetHistoryOfAgentSessions\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"GetHistoryOfServiceCalls\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:GetHistoryOfServiceCalls\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"GetHistoryOfServiceCallsComments\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:GetHistoryOfServiceCallsComments\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"GetHistoryOfServiceChat\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:GetHistoryOfServiceChat\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"GetHistoryOfServiceFileTransfer\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:GetHistoryOfServiceFileTransfer\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"GetHistoryOfServiceRASessions\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:GetHistoryOfServiceRASessions\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"GetHistoryOfServiceRASessionsComments\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:GetHistoryOfServiceRASessionsComments\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"GetHistoryOfServiceTreatments\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:GetHistoryOfServiceTreatments\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"GetHistoryOfServiceTreatmentsComments\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:GetHistoryOfServiceTreatmentsComments\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"GetHistoryOfSIPCalls\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:GetHistoryOfSIPCalls\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"GetOpenedServiceTreatments\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:GetOpenedServiceTreatments\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"PartnerNotificationAdd\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:PartnerNotificationAdd\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"RegionRead\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:RegionRead\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ServiceLineKindAdd\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ServiceLineKindAdd\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ServiceLineKindDelete\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ServiceLineKindDelete\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ServiceLineKindEdit\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ServiceLineKindEdit\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ServiceLineKindRead\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ServiceLineKindRead\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"SpecialistAdd\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:SpecialistAdd\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"SpecialistDelete\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:SpecialistDelete\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"SpecialistEdit\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:SpecialistEdit\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"SpecialistRead\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:SpecialistRead\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"SpecialistSendWelcomeEmail\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:SpecialistSendWelcomeEmail\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"StartPictureClicksHistoryRead\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:StartPictureClicksHistoryRead\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"StartPictureRead\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:StartPictureRead\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"StorefrontProductBuyRequestAccept\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:StorefrontProductBuyRequestAccept\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"StorefrontProductBuyRequestRefuse\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:StorefrontProductBuyRequestRefuse\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"StorefrontProductBuyRequestsGet\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:StorefrontProductBuyRequestsGet\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"StorefrontProductClicksHistoryRead\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:StorefrontProductClicksHistoryRead\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"StorefrontProductsRead\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:StorefrontProductsRead\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"UserServiceLineAdd\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:UserServiceLineAdd\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"UserServiceLineDelete\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:UserServiceLineDelete\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"UserServiceLineEdit\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:UserServiceLineEdit\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"UserServiceLineRead\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:UserServiceLineRead\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"GetClientUsageStatistics\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:GetClientUsageStatistics\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"GetHistoryOfColleaguesChat\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:GetHistoryOfColleaguesChat\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ServiceRequestChannelRead\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ServiceRequestChannelRead\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ServiceKindRead\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ServiceKindRead\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ServiceKindAdd\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ServiceKindAdd\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ServiceKindEdit\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ServiceKindEdit\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ServiceKindDelete\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ServiceKindDelete\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ServiceRequestAdd\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ServiceRequestAdd\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ServiceRequestEdit\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ServiceRequestEdit\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ServiceRequestFiles\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ServiceRequestFiles\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ServiceRequestMessages\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ServiceRequestMessages\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ServiceRequestSendTextMessage\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ServiceRequestSendTextMessage\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ServiceRequestEditTextMessage\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ServiceRequestEditTextMessage\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ServiceRequestDeleteTextMessage\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ServiceRequestDeleteTextMessage\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ServiceRequestAttachFile\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ServiceRequestAttachFile\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ServiceRequestDeleteFile\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ServiceRequestDeleteFile\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ServiceRequestDownloadFile\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ServiceRequestDownloadFile\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ServiceRequestHistory\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ServiceRequestHistory\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ServiceRequestRead\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ServiceRequestRead\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ServiceRequestStatusRead\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ServiceRequestStatusRead\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ServiceRequestTypeRead\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ServiceRequestTypeRead\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ServiceRequestTypeAdd\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ServiceRequestTypeAdd\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ServiceRequestTypeEdit\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ServiceRequestTypeEdit\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ServiceRequestTypeDelete\">\n\t\t\t<soapbind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ServiceRequestTypeDelete\"/>\n\t\t\t<input>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soapbind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t</binding>\n\t<binding
+        name=\"PartnerWebAPI2Soap12Binding\"\n\t\t\ttype=\"tns:PartnerWebAPI2PortType\">\n\t\t<soap12bind:binding
+        style=\"document\"\n\t\t\t\ttransport=\"http://schemas.xmlsoap.org/soap/http\"/>\n\t\t<operation
+        name=\"ClientAdd\">\n\t\t\t<soap12bind:operation style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ClientAdd\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ClientAdditionalParameterAdd\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ClientAdditionalParameterAdd\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ClientAdditionalParameterDelete\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ClientAdditionalParameterDelete\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ClientAdditionalParameterEdit\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ClientAdditionalParameterEdit\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ClientAdditionalParameterRead\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ClientAdditionalParameterRead\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ClientAdditionalParameterValueEdit\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ClientAdditionalParameterValueEdit\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ClientAdditionalParameterValueRead\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ClientAdditionalParameterValueRead\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ClientDelete\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ClientDelete\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ClientDepartmentAdd\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ClientDepartmentAdd\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ClientDepartmentDelete\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ClientDepartmentDelete\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ClientDepartmentEdit\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ClientDepartmentEdit\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ClientDepartmentRead\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ClientDepartmentRead\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ClientEdit\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ClientEdit\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ClientITSStatus\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ClientITSStatus\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ClientRead\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ClientRead\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ClientSetClientManager\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ClientSetClientManager\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ClientSetServiceManager\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ClientSetServiceManager\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ClientUserAdd\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ClientUserAdd\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ClientUserDelete\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ClientUserDelete\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ClientUserEdit\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ClientUserEdit\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ClientUserRead\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ClientUserRead\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ClientUserSendWelcomeEmail\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ClientUserSendWelcomeEmail\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"CompetenceAdd\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:CompetenceAdd\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"CompetenceDelete\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:CompetenceDelete\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"CompetenceEdit\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:CompetenceEdit\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"CompetenceRead\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:CompetenceRead\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"DepartmentAdd\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:DepartmentAdd\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"DepartmentDelete\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:DepartmentDelete\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"DepartmentEdit\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:DepartmentEdit\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"DepartmentRead\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:DepartmentRead\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"GetHistoryOfAgentSessions\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:GetHistoryOfAgentSessions\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"GetHistoryOfServiceCalls\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:GetHistoryOfServiceCalls\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"GetHistoryOfServiceCallsComments\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:GetHistoryOfServiceCallsComments\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"GetHistoryOfServiceChat\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:GetHistoryOfServiceChat\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"GetHistoryOfServiceFileTransfer\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:GetHistoryOfServiceFileTransfer\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"GetHistoryOfServiceRASessions\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:GetHistoryOfServiceRASessions\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"GetHistoryOfServiceRASessionsComments\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:GetHistoryOfServiceRASessionsComments\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"GetHistoryOfServiceTreatments\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:GetHistoryOfServiceTreatments\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"GetHistoryOfServiceTreatmentsComments\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:GetHistoryOfServiceTreatmentsComments\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"GetHistoryOfSIPCalls\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:GetHistoryOfSIPCalls\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"GetOpenedServiceTreatments\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:GetOpenedServiceTreatments\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"PartnerNotificationAdd\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:PartnerNotificationAdd\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"RegionRead\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:RegionRead\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ServiceLineKindAdd\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ServiceLineKindAdd\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ServiceLineKindDelete\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ServiceLineKindDelete\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ServiceLineKindEdit\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ServiceLineKindEdit\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ServiceLineKindRead\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ServiceLineKindRead\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"SpecialistAdd\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:SpecialistAdd\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"SpecialistDelete\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:SpecialistDelete\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"SpecialistEdit\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:SpecialistEdit\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"SpecialistRead\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:SpecialistRead\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"SpecialistSendWelcomeEmail\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:SpecialistSendWelcomeEmail\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"StartPictureClicksHistoryRead\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:StartPictureClicksHistoryRead\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"StartPictureRead\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:StartPictureRead\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"StorefrontProductBuyRequestAccept\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:StorefrontProductBuyRequestAccept\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"StorefrontProductBuyRequestRefuse\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:StorefrontProductBuyRequestRefuse\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"StorefrontProductBuyRequestsGet\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:StorefrontProductBuyRequestsGet\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"StorefrontProductClicksHistoryRead\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:StorefrontProductClicksHistoryRead\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"StorefrontProductsRead\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:StorefrontProductsRead\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"UserServiceLineAdd\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:UserServiceLineAdd\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"UserServiceLineDelete\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:UserServiceLineDelete\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"UserServiceLineEdit\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:UserServiceLineEdit\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"UserServiceLineRead\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:UserServiceLineRead\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"GetClientUsageStatistics\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:GetClientUsageStatistics\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"GetHistoryOfColleaguesChat\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:GetHistoryOfColleaguesChat\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ServiceRequestChannelRead\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ServiceRequestChannelRead\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ServiceKindRead\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ServiceKindRead\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ServiceKindAdd\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ServiceKindAdd\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ServiceKindEdit\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ServiceKindEdit\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ServiceKindDelete\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ServiceKindDelete\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ServiceRequestAdd\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ServiceRequestAdd\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ServiceRequestEdit\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ServiceRequestEdit\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ServiceRequestFiles\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ServiceRequestFiles\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ServiceRequestMessages\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ServiceRequestMessages\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ServiceRequestSendTextMessage\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ServiceRequestSendTextMessage\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ServiceRequestEditTextMessage\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ServiceRequestEditTextMessage\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ServiceRequestDeleteTextMessage\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ServiceRequestDeleteTextMessage\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ServiceRequestAttachFile\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ServiceRequestAttachFile\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ServiceRequestDeleteFile\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ServiceRequestDeleteFile\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ServiceRequestDownloadFile\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ServiceRequestDownloadFile\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ServiceRequestHistory\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ServiceRequestHistory\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ServiceRequestRead\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ServiceRequestRead\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ServiceRequestStatusRead\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ServiceRequestStatusRead\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ServiceRequestTypeRead\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ServiceRequestTypeRead\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ServiceRequestTypeAdd\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ServiceRequestTypeAdd\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ServiceRequestTypeEdit\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ServiceRequestTypeEdit\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t\t<operation name=\"ServiceRequestTypeDelete\">\n\t\t\t<soap12bind:operation
+        style=\"document\"\n\t\t\t\t\tsoapAction=\"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:ServiceRequestTypeDelete\"/>\n\t\t\t<input>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</input>\n\t\t\t<output>\n\t\t\t\t<soap12bind:body
+        use=\"literal\"/>\n\t\t\t</output>\n\t\t</operation>\n\t</binding>\n\t<service
+        name=\"PartnerWebAPI2\">\n\t\t<port name=\"PartnerWebAPI2Soap\"\n\t\t\t\tbinding=\"tns:PartnerWebAPI2SoapBinding\">\n\t\t\t<documentation>\n\t\t\t\t<wsi:Claim
+        xmlns:wsi=\"http://ws-i.org/schemas/conformanceClaim/\"\n\t\t\t\t\t\tconformsTo=\"http://ws-i.org/profiles/basic/1.1\"/>\n\t\t\t</documentation>\n\t\t\t<soapbind:address
+        location=\"https://cus.1c-connect.com/cus/ws/PartnerWebAPI2\"/>\n\t\t</port>\n\t\t<port
+        name=\"PartnerWebAPI2Soap12\"\n\t\t\t\tbinding=\"tns:PartnerWebAPI2Soap12Binding\">\n\t\t\t<soap12bind:address
+        location=\"https://cus.1c-connect.com/cus/ws/PartnerWebAPI2\"/>\n\t\t</port>\n\t</service>\n</definitions>\n"
+  recorded_at: Sun, 03 Mar 2024 07:29:53 GMT
+- request:
+    method: post
+    uri: https://cus.1c-connect.com/cus/ws/PartnerWebAPI2
+    body:
+      encoding: UTF-8
+      string: |2
+                  <soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:par="http://buhphone.com/PartnerWebAPI2" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:core="http://v8.1c.ru/8.1/data/core" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                    <soap:Header/>
+                    <soap:Body>
+                      <par:GetOpenedServiceTreatments><par:Params><Property xmlns="http://v8.1c.ru/8.1/data/core" name="OpenedFrom"><Value xsi:type="xs:date">2024-02-26T00:00:00+00:00</Value></Property><Property xmlns="http://v8.1c.ru/8.1/data/core" name="SpecialistID"><Value xsi:type="xs:string">3bff3f2f-6c13-4d6a-9b2f-c69543a05ea2</Value></Property></par:Params></par:GetOpenedServiceTreatments>
+                    </soap:Body>
+                  </soap:Envelope>
+    headers:
+      Soapaction:
+      - '"http://buhphone.com/PartnerWebAPI2#PartnerWebAPI2:GetOpenedServiceTreatments"'
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Content-Length:
+      - '762'
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+      Authorization:
+      - Basic <AUTH>
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.14.2
+      Date:
+      - Sun, 03 Mar 2024 07:29:53 GMT
+      Content-Type:
+      - application/soap+xml;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: "<soap:Envelope xmlns:soap=\"http://www.w3.org/2003/05/soap-envelope\">\r\n\t<soap:Body>\r\n\t\t<m:GetOpenedServiceTreatmentsResponse
+        xmlns:m=\"http://buhphone.com/PartnerWebAPI2\">\r\n\t\t\t<m:return xmlns:xs=\"http://www.w3.org/2001/XMLSchema\"\r\n\t\t\t\t\txmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\r\n\t\t\t\t<Property
+        xmlns=\"http://v8.1c.ru/8.1/data/core\"\r\n\t\t\t\t\t\tname=\"ResultCode\">\r\n\t\t\t\t\t<Value
+        xsi:type=\"xs:string\">SUCCESS</Value>\r\n\t\t\t\t</Property>\r\n\t\t\t\t<Property
+        xmlns=\"http://v8.1c.ru/8.1/data/core\"\r\n\t\t\t\t\t\tname=\"ResultData\">\r\n\t\t\t\t\t<Value
+        xsi:type=\"ValueTable\">\r\n\t\t\t\t\t\t<column>\r\n\t\t\t\t\t\t\t<Name>ServiceTreatmentID</Name>\r\n\t\t\t\t\t\t\t<ValueType/>\r\n\t\t\t\t\t\t</column>\r\n\t\t\t\t\t\t<column>\r\n\t\t\t\t\t\t\t<Name>ClientID</Name>\r\n\t\t\t\t\t\t\t<ValueType/>\r\n\t\t\t\t\t\t</column>\r\n\t\t\t\t\t\t<column>\r\n\t\t\t\t\t\t\t<Name>ServiceUserID</Name>\r\n\t\t\t\t\t\t\t<ValueType/>\r\n\t\t\t\t\t\t</column>\r\n\t\t\t\t\t\t<column>\r\n\t\t\t\t\t\t\t<Name>ServiceID</Name>\r\n\t\t\t\t\t\t\t<ValueType/>\r\n\t\t\t\t\t\t</column>\r\n\t\t\t\t\t\t<column>\r\n\t\t\t\t\t\t\t<Name>Initialized</Name>\r\n\t\t\t\t\t\t\t<ValueType/>\r\n\t\t\t\t\t\t</column>\r\n\t\t\t\t\t\t<column>\r\n\t\t\t\t\t\t\t<Name>SpecAppointed</Name>\r\n\t\t\t\t\t\t\t<ValueType/>\r\n\t\t\t\t\t\t</column>\r\n\t\t\t\t\t\t<column>\r\n\t\t\t\t\t\t\t<Name>QueueWaitingTime</Name>\r\n\t\t\t\t\t\t\t<ValueType/>\r\n\t\t\t\t\t\t</column>\r\n\t\t\t\t\t\t<column>\r\n\t\t\t\t\t\t\t<Name>CurrentSpecialist</Name>\r\n\t\t\t\t\t\t\t<ValueType/>\r\n\t\t\t\t\t\t</column>\r\n\t\t\t\t\t\t<column>\r\n\t\t\t\t\t\t\t<Name>ReactionStarted</Name>\r\n\t\t\t\t\t\t\t<ValueType/>\r\n\t\t\t\t\t\t</column>\r\n\t\t\t\t\t\t<column>\r\n\t\t\t\t\t\t\t<Name>QueueLength</Name>\r\n\t\t\t\t\t\t\t<ValueType/>\r\n\t\t\t\t\t\t</column>\r\n\t\t\t\t\t\t<row>\r\n\t\t\t\t\t\t\t<Value
+        xsi:type=\"xs:string\">95c1536d-1033-46de-8e03-63c7ac7bfd6f</Value>\r\n\t\t\t\t\t\t\t<Value
+        xsi:type=\"xs:string\">2c4e06fb-c62a-481b-8aa5-cc49fdcb9f60</Value>\r\n\t\t\t\t\t\t\t<Value
+        xsi:type=\"xs:string\">dd9f0a89-08db-49bf-83dc-dfe3269bf6fe</Value>\r\n\t\t\t\t\t\t\t<Value
+        xsi:type=\"xs:string\">cd484afc-29b7-11ed-8dca-00505601495b</Value>\r\n\t\t\t\t\t\t\t<Value
+        xsi:type=\"xs:dateTime\">2024-03-02T19:19:51</Value>\r\n\t\t\t\t\t\t\t<Value
+        xsi:type=\"xs:dateTime\">2024-03-02T19:19:51</Value>\r\n\t\t\t\t\t\t\t<Value
+        xsi:type=\"xs:decimal\">0</Value>\r\n\t\t\t\t\t\t\t<Value xsi:type=\"xs:string\">3bff3f2f-6c13-4d6a-9b2f-c69543a05ea2</Value>\r\n\t\t\t\t\t\t\t<Value
+        xsi:type=\"xs:dateTime\">2024-03-02T19:19:51</Value>\r\n\t\t\t\t\t\t\t<Value
+        xsi:type=\"xs:decimal\">1</Value>\r\n\t\t\t\t\t\t</row>\r\n\t\t\t\t\t\t<row>\r\n\t\t\t\t\t\t\t<Value
+        xsi:type=\"xs:string\">14d38980-d221-44c9-aa4f-2ba8830bfa55</Value>\r\n\t\t\t\t\t\t\t<Value
+        xsi:type=\"xs:string\">b3b76376-8f8e-11e1-bd9e-ecd0e87b54c0</Value>\r\n\t\t\t\t\t\t\t<Value
+        xsi:type=\"xs:string\">2a6b918f-92b7-11e7-80e6-0025904f970f</Value>\r\n\t\t\t\t\t\t\t<Value
+        xsi:type=\"xs:string\">b55cd510-35dc-11e4-93f8-e839352bba69</Value>\r\n\t\t\t\t\t\t\t<Value
+        xsi:type=\"xs:dateTime\">2024-02-27T15:31:55</Value>\r\n\t\t\t\t\t\t\t<Value
+        xsi:type=\"xs:dateTime\">2024-02-27T15:31:55</Value>\r\n\t\t\t\t\t\t\t<Value
+        xsi:type=\"xs:decimal\">0</Value>\r\n\t\t\t\t\t\t\t<Value xsi:type=\"xs:string\">3bff3f2f-6c13-4d6a-9b2f-c69543a05ea2</Value>\r\n\t\t\t\t\t\t\t<Value
+        xsi:type=\"xs:dateTime\">2024-02-27T15:31:55</Value>\r\n\t\t\t\t\t\t\t<Value
+        xsi:type=\"xs:decimal\">1</Value>\r\n\t\t\t\t\t\t</row>\r\n\t\t\t\t\t</Value>\r\n\t\t\t\t</Property>\r\n\t\t\t</m:return>\r\n\t\t</m:GetOpenedServiceTreatmentsResponse>\r\n\t</soap:Body>\r\n</soap:Envelope>"
+  recorded_at: Sun, 03 Mar 2024 07:29:53 GMT
+recorded_with: VCR 6.2.0
