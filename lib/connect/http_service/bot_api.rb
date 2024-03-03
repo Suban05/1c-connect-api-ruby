@@ -35,14 +35,6 @@ module Connect
         )
       end
 
-      def send_message_line(options)
-        post(
-          'v1/line/send/message',
-          self,
-          options
-        )
-      end
-
       def drop_keyboard(options)
         post(
           'v1/line/drop/keyboard',
