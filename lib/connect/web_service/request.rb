@@ -15,9 +15,14 @@ module Connect
         body = response.body
         body_key = "#{method_as_s}_response".to_sym
         response_data = []
-        if (property = body.dig(body_key, :return, :property)) && property.size > 1 &&
-          property[0][:value] == 'SUCCESS' && property[1][:value][:row]
-          response_data = property[1][:value][:row]
+        if (property = body.dig(body_key, :return, :property)) && property.size > 1
+          if property[0][:value] == 'SUCCESS'
+            if property[1][:value] && property[1][:value][:row]
+              response_data = property[1][:value][:row]
+            end
+          else
+            raise Connect::WebService::WebServiceError, "Error code: #{property[0][:value]}"
+          end
         end
         response_data
       end

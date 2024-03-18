@@ -14,5 +14,8 @@ module Connect
         @connection = create_connection(self)
       end
     end
+
+    class WebServiceError < StandardError
+    end
   end
 end
