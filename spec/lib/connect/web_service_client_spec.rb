@@ -85,6 +85,24 @@ RSpec.describe Connect::WebService::Client do
     end
   end
 
+  describe '#specialist_edit' do
+    it 'edit a specialist' do
+      options = {
+        specialist_id: spec_id,
+        name: 'John',
+        email: 'john@example.com',
+        surname: 'Doe',
+        secondary_name: 'Smith',
+        password: 'password123',
+        post: 'Developer',
+        department_id: '123',
+        phone: '123-456-7890'
+      }
+      allow(api).to receive(:specialist_edit).with(options)
+      api.specialist_edit(options)
+    end
+  end
+
   describe '#get_opened_service_treatments' do
     it 'returns opened service treatments' do
       VCR.use_cassette('get_opened_service_treatments') do

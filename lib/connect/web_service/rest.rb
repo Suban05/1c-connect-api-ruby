@@ -56,6 +56,22 @@ module Connect
         call(self, method: :specialist_add, params: params)
       end
 
+      def specialist_edit(options)
+        params = []
+        add_param(params, create_string(name: 'SpecialistID', content: options[:specialist_id]))
+        add_param(params, create_string(name: 'Name', content: options[:name]))
+        add_param(params, create_string(name: 'email', content: options[:email]))
+        add_param(params, create_string(name: 'Surname', content: options[:surname]))
+        add_param(params, create_string(name: 'SecondaryName', content: options[:secondary_name]))
+        add_param(params, create_string(name: 'Password', content: options[:password]))
+        add_param(params, create_date(name: 'Birthday', content: options[:birthday]))
+        add_param(params, create_string(name: 'Post', content: options[:post]))
+        add_param(params, create_string(name: 'DepartmentID', content: options[:department_id]))
+        add_param(params, create_string(name: 'Phone', content: options[:phone]))
+
+        call(self, method: :specialist_add, params: params)
+      end
+
       def client_user_read(options = {})
         params = []
         add_param(params, create_changed_from(options))
